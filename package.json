@@ -13,6 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.39.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -21,9 +22,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "format": "prettier \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "slint": "stylelint \"src/**/*.{css,scss}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json}\"",
-    "lint:ci": "cross-env TIMING=1 npm run lint --max-warnings=0 && yarn slint && yarn format --check",
-    "lint:fix": "cross-env TIMING=1 npm run lint --fix && yarn slint --fix && yarn format --write"
+    "lint:ci": "cross-env TIMING=1 npm run lint --max-warnings=0 && npm run slint && npm run format --check",
+    "lint:fix": "cross-env TIMING=1 npm run lint --fix && npm run slint --fix && npm run format --write"
   },
   "eslintConfig": {
     "extends": [
@@ -49,7 +52,12 @@
     "cross-env": "^7.0.3",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8"
+    "postcss": "^8.4.18",
+    "postcss-scss": "^4.0.5",
+    "prettier": "^2.8.8",
+    "stylelint": "^14.14.1",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-prettier": "^2.0.0"
   },
   "husky": {
     "hooks": {
@@ -58,7 +66,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,scss,css}": [
-      "yarn lint:ci"
+      "npm run lint:ci"
     ]
   }
 }
