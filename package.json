@@ -57,11 +57,15 @@
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-prettier": "^2.0.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,scss,css}": [
       "node_modules/.bin/eslint --max-warnings=0",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
