@@ -23,6 +23,6 @@ const Wrapper = styled.div(() => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   color: colors.white,
-  borderBottom: `1px solid ${colors.menuBG}`,
+  borderBottom: `1px solid ${colors.menuBorder}`,
   height: '65px',
 }));
