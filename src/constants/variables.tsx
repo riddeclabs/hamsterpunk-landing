@@ -4,4 +4,6 @@ export const colors = {
   mainText: '#FCF3D9',
   black: '#272522',
   footer: 'rgba(255,255,255,0.4)',
+  white: '#FFFFFF',
+  beigeText: '#FCF3D9',
 };
