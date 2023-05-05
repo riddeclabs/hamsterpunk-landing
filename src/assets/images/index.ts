@@ -1,3 +1,5 @@
+import crossImage from './crossImage.svg';
 import logo from './logo.svg';
+import newWayImage from './newWayImage.png';
 
-export { logo };
+export { logo, newWayImage, crossImage };

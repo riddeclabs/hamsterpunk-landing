@@ -2,8 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import crossImage from '../../../assets/images/crossImage.svg';
-import newWeyImage from '../../../assets/images/newWayImage.png';
+import { crossImage, newWayImage } from '../../../assets/images';
 import { Content } from '../../../components/Content';
 import { colors } from '../../../constants/variables';
 
@@ -16,7 +15,7 @@ export const NewWayBlock = () => {
             <Tittle>A new way of Crypto Game!</Tittle>
 
             <CommonTextBlock>
-              <img alt='cross' src={crossImage} height={'82px'} />
+              <CrossImage alt='cross' src={crossImage} />
               <CommonText>
                 Hamsterpunk is an ultimate idle farming game with cute and
                 curious hamsters to command, manifold structures to build,
@@ -25,7 +24,7 @@ export const NewWayBlock = () => {
               </CommonText>
             </CommonTextBlock>
           </div>
-          <img alt='new-way' src={newWeyImage} />
+          <NewWayImage alt='new-way' src={newWayImage} />
         </PositionContainer>
       </Content>
     </Wrapper>
@@ -44,6 +43,9 @@ const Tittle = styled.div(({ theme }) => ({
   textTransform: theme?.capitalize || 'capitalize',
 }));
 
+const CrossImage = styled.img(() => ({}));
+const NewWayImage = styled.img(() => ({}));
+
 const CommonTextBlock = styled.div(() => ({
   width: '523px',
   marginTop: '176px',
@@ -55,7 +57,7 @@ const CommonText = styled.div(() => ({
   fontWeight: 400,
   fontSize: '26px',
   lineHeight: '134.52%',
-  color: colors.beigeText,
+  color: colors.mainText,
   marginTop: '31px',
 }));
 

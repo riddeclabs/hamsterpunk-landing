@@ -5,7 +5,6 @@ export const colors = {
   black: '#272522',
   footer: 'rgba(255,255,255,0.4)',
   white: '#FFFFFF',
-  beigeText: '#FCF3D9',
   menuBorder: 'rgba(255, 255, 255, 0.2)',
 };
 
