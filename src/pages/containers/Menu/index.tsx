@@ -17,6 +17,7 @@ export const Menu = () => {
         left: '0',
         right: '0',
         borderBottom: `1px solid ${colors.menuBorder}`,
+        zIndex: 1,
       }}
     >
       <Content>
