@@ -5,6 +5,7 @@ export const colors = {
   black: '#272522',
   footer: 'rgba(255,255,255,0.4)',
   white: '#FFFFFF',
+  menuBG: 'rgba(255, 255, 255, 0.2)',
 };
 
 export const menuValue = [

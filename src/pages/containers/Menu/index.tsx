@@ -8,7 +8,7 @@ import { Logo } from '../../../components/Logo';
 import { colors } from '../../../constants/variables';
 
 export const Menu = () => {
-  //TODO add Wrapper components
+  //TODO add Container components
   return (
     <Wrapper>
       <Logo />
@@ -23,6 +23,6 @@ const Wrapper = styled.div(() => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   color: colors.white,
-  borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+  borderBottom: `1px solid ${colors.menuBG}`,
   height: '65px',
 }));
