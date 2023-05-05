@@ -2,18 +2,31 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { DesctopMenu } from './DesctopMenu';
+import { Links } from './Links';
 
+import { Content } from '../../../components/Content';
 import { Logo } from '../../../components/Logo';
 import { colors } from '../../../constants/variables';
 
 export const Menu = () => {
-  //TODO add Container components
   return (
-    <Wrapper>
-      <Logo />
-      <DesctopMenu />
-    </Wrapper>
+    <div
+      style={{
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+        borderBottom: `1px solid ${colors.menuBorder}`,
+        zIndex: 1,
+      }}
+    >
+      <Content>
+        <Wrapper>
+          <Logo />
+          <Links />
+        </Wrapper>
+      </Content>
+    </div>
   );
 };
 
@@ -23,6 +36,5 @@ const Wrapper = styled.div(() => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   color: colors.white,
-  borderBottom: `1px solid ${colors.menuBorder}`,
   height: '65px',
 }));
