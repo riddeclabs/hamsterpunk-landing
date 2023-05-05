@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { colors, menuValue } from '../../../constants/variables';
 
-export const DesctopMenu = () => {
+export const Links = () => {
   return (
     <Wrapper>
       {menuValue.map((item) => (
@@ -24,6 +24,10 @@ const LinkMenu = styled.a(() => ({
   lineHeight: '16px',
   cursor: 'pointer',
   color: colors.white,
+
+  ':hover': {
+    color: colors.titles,
+  },
 }));
 
 const Wrapper = styled.div(() => ({

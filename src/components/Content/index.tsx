@@ -9,4 +9,6 @@ export const Content: FC<{ children: React.ReactNode }> = ({ children }) => {
 const Container = styled.div(() => ({
   maxWidth: 1312,
   margin: '0 auto',
+  width: '100%',
+  height: '100%',
 }));
