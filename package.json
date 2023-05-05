@@ -26,7 +26,8 @@
     "slint": "stylelint \"src/**/*.{css,scss}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "lint:ci": "cross-env TIMING=1 npm run lint --max-warnings=0 && npm run slint",
-    "lint:fix": "cross-env TIMING=1 npm run lint --fix && npm run slint --fix && npm run format --write"
+    "lint:fix": "cross-env TIMING=1 npm run lint --fix && npm run slint --fix && npm run format --write",
+    "precommit": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
