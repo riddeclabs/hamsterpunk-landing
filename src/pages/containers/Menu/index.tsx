@@ -1,5 +1,28 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+import { DesctopMenu } from './DesctopMenu';
+
+import { Logo } from '../../../components/Logo';
+import { colors } from '../../../constants/variables';
+
 export const Menu = () => {
-  return <div>Menu</div>;
+  //TODO add Wrapper components
+  return (
+    <Wrapper>
+      <Logo />
+      <DesctopMenu />
+    </Wrapper>
+  );
 };
+
+const Wrapper = styled.div(() => ({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  color: colors.white,
+  borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+  height: '65px',
+}));
