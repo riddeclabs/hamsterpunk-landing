@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import logo from '../../assets/images/logo.svg';
+import { logo } from '../../assets/images';
 import { colors } from '../../constants/variables';
 
 export const Logo = () => {

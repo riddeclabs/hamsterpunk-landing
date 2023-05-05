@@ -29,5 +29,5 @@ const LinkMenu = styled.a(() => ({
 const Wrapper = styled.div(() => ({
   display: 'flex',
   alignItems: 'center',
-  gridGap: '87px',
+  gap: '87px',
 }));
