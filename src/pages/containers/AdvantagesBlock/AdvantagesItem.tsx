@@ -1,0 +1,38 @@
+import React from 'react';
+
+import styled from 'styled-components';
+
+import { Typography } from '../../../components/Typography';
+
+type AdvItemPropsType = {
+  text: string;
+  title: string;
+};
+
+export const AdvantagesItem = ({ text, title }: AdvItemPropsType) => {
+  return (
+    <Wrapper>
+      <Title>
+        <Typography text={title} variant='subtitle' />
+      </Title>
+      <Text>
+        <Typography text={text} variant='text' />
+      </Text>
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.div(({ theme }) => ({
+  width: '100%',
+  paddingBottom: '24px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column' || theme.column,
+  maxWidth: '346px',
+  textAlign: 'center',
+}));
+const Title = styled.div(() => ({}));
+const Text = styled.div(() => ({
+  marginTop: '33px',
+}));

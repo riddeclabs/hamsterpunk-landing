@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { crossImage, newWayImage } from '../../../assets/images';
 import { Content } from '../../../components/Content';
+import { Typography } from '../../../components/Typography';
 import { colors } from '../../../constants/variables';
 
 export const NewWayBlock = () => {
@@ -12,15 +13,19 @@ export const NewWayBlock = () => {
       <Content>
         <PositionContainer>
           <div>
-            <Tittle>A new way of Crypto Game!</Tittle>
+            <Tittle>
+              <Typography text={'A new way of Crypto Game!'} variant='title' />
+            </Tittle>
 
             <CommonTextBlock>
               <CrossImage alt='cross' src={crossImage} />
               <CommonText>
-                Hamsterpunk is an ultimate idle farming game with cute and
-                curious hamsters to command, manifold structures to build,
-                upgrades to unlock and rewards to get. Join Hamsterville to make
-                it thrive, to learn and earn crypto.
+                <Typography
+                  text={
+                    'Hamsterpunk is an ultimate idle farming game with cute and curious hamsters to command, manifold structures to build, upgrades to unlock and rewards to get. Join Hamsterville to make it thrive, to learn and earn crypto.'
+                  }
+                  variant='text'
+                />
               </CommonText>
             </CommonTextBlock>
           </div>
