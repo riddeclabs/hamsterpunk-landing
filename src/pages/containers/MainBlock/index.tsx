@@ -1,5 +1,11 @@
 import React from 'react';
 
+import { Content } from '../../../components/Content';
+
 export const MainBlock = () => {
-  return <div>MainBlock</div>;
+  return (
+    <Content>
+      <div>MainBlock</div>
+    </Content>
+  );
 };

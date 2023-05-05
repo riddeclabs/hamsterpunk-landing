@@ -65,9 +65,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,scss,css}": [
+    "*.{js,jsx,ts,tsx,scss}": [
       "node_modules/.bin/eslint --max-warnings=0",
       "prettier --write"
     ]
   }
 }
+
+

@@ -4,26 +4,30 @@ import styled from 'styled-components';
 
 import crossImage from '../../../assets/images/crossImage.svg';
 import newWeyImage from '../../../assets/images/newWayImage.png';
+import { Content } from '../../../components/Content';
 import { colors } from '../../../constants/variables';
 
 export const NewWayBlock = () => {
   return (
     <Wrapper>
-      <PositionContainer>
-        <TextBlock>
-          <Tittle>A new way of Crypto Game!</Tittle>
-          <CommonTextBlock>
-            <img alt='' src={crossImage} height={'82px'} />
-            <CommonText>
-              Hamsterpunk is an ultimate idle farming game with cute and curious
-              hamsters to command, manifold structures to build, upgrades to
-              unlock and rewards to get. Join Hamsterville to make it thrive, to
-              learn and earn crypto.
-            </CommonText>
-          </CommonTextBlock>
-        </TextBlock>
-        <ImageBlock alt='' src={newWeyImage} />
-      </PositionContainer>
+      <Content>
+        <PositionContainer>
+          <div>
+            <Tittle>A new way of Crypto Game!</Tittle>
+
+            <CommonTextBlock>
+              <img alt='cross' src={crossImage} height={'82px'} />
+              <CommonText>
+                Hamsterpunk is an ultimate idle farming game with cute and
+                curious hamsters to command, manifold structures to build,
+                upgrades to unlock and rewards to get. Join Hamsterville to make
+                it thrive, to learn and earn crypto.
+              </CommonText>
+            </CommonTextBlock>
+          </div>
+          <img alt='new-way' src={newWeyImage} />
+        </PositionContainer>
+      </Content>
     </Wrapper>
   );
 };
@@ -42,6 +46,7 @@ const Tittle = styled.div(({ theme }) => ({
 
 const CommonTextBlock = styled.div(() => ({
   width: '523px',
+  marginTop: '176px',
 }));
 
 const CommonText = styled.div(() => ({
@@ -60,21 +65,7 @@ const PositionContainer = styled.div(() => ({
   width: '100%',
 }));
 
-const TextBlock = styled.div(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-  flexDirection: theme?.column || 'column',
-}));
-
-const ImageBlock = styled.img(() => ({
-  height: '620px',
-}));
-
 const Wrapper = styled.div(() => ({
   background: colors.grayBackground,
   marginTop: '132px',
-  width: '100%',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
 }));
