@@ -28,7 +28,7 @@ export const MainBlock = () => {
 
           <RiddecCreated />
         </DevelopersBlock>
-        <Intersect></Intersect>
+        <Intersect />
       </BottomBlock>
     </Wrapper>
   );
