@@ -1,5 +1,54 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+import { progressImage } from '../../../assets/images';
+import { Content } from '../../../components/Content';
+import { Typography } from '../../../components/Typography';
+import { colors } from '../../../constants/variables';
+
 export const ProgressBlock = () => {
-  return <div>ProgressBlock</div>;
+  //TODO change color and BG
+  return (
+    <Block>
+      <Content>
+        <Wrapper>
+          <Typography
+            text='Expand and progress'
+            variant='title'
+            color={colors.mainText}
+          />
+          <Text>
+            <Typography
+              color={colors.mainText}
+              text='Lots of bright hamsters live in Hamsterville. Help them invent new tools and explore technologies to increase production of resources.
+'
+              variant='text'
+            />
+          </Text>
+
+          <ProgressImage alt='progress' src={progressImage} />
+        </Wrapper>
+      </Content>
+    </Block>
+  );
 };
+
+const Block = styled.div(() => ({
+  marginTop: '180px',
+}));
+
+const Wrapper = styled.div(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column' || theme.column,
+  alignItems: 'center',
+  textAlign: 'center',
+}));
+
+const ProgressImage = styled.img(() => ({
+  marginTop: '52px',
+}));
+const Text = styled.div(() => ({
+  marginTop: '24px',
+  maxWidth: '598px',
+}));

@@ -6,6 +6,7 @@ import intersect from './intersect.svg';
 import logo from './logo.svg';
 import mainImage from './main.jpg';
 import newWayImage from './newWayImage.png';
+import progressImage from './progressImage.png';
 import riddec from './riddec.svg';
 
 export {
@@ -17,6 +18,7 @@ export {
   logo,
   newWayImage,
   crossImage,
+  progressImage,
   advBorderImage,
 };
 
