@@ -1,3 +1,4 @@
+import advBorderImage from './advBorderImage.svg';
 import androidIcon from './android.svg';
 import iosIcon from './apple.svg';
 import crossImage from './crossImage.svg';
@@ -6,9 +7,18 @@ import logo from './logo.svg';
 import mainImage from './main.jpg';
 import newWayImage from './newWayImage.png';
 import riddec from './riddec.svg';
-export { mainImage, intersect, androidIcon, iosIcon, riddec };
 
-export { logo, newWayImage, crossImage };
+export {
+  mainImage,
+  intersect,
+  androidIcon,
+  iosIcon,
+  riddec,
+  logo,
+  newWayImage,
+  crossImage,
+  advBorderImage,
+};
 
 export { ReactComponent as HamsterPunkText } from './hamsterpunkText.svg';
 export { ReactComponent as RiddecCreated } from './riddec.svg';
