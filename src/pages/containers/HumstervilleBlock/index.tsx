@@ -8,7 +8,6 @@ import { Typography } from '../../../components/Typography';
 import { colors } from '../../../constants/variables';
 
 export const HumstervilleBlock = () => {
-  //TODO change color and BG
   return (
     <Block>
       <Content>
@@ -16,13 +15,15 @@ export const HumstervilleBlock = () => {
           <Typography
             text='Hamsterville'
             variant='title'
-            color={colors.mainText}
+            color={colors.black}
           />
           <Text>
             <Typography
-              color={colors.mainText}
+              color={colors.black}
               text='Hamsterville is a small island, floating in the sky. Lead the exploration of new lands and expand the island to give your hamsters more space to live in.
 '
+              lineHeight={'32px'}
+              fontSize={'24px'}
               variant='text'
             />
           </Text>

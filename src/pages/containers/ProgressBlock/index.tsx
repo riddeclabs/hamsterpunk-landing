@@ -8,7 +8,6 @@ import { Typography } from '../../../components/Typography';
 import { colors } from '../../../constants/variables';
 
 export const ProgressBlock = () => {
-  //TODO change color and BG
   return (
     <Block>
       <Content>
@@ -16,13 +15,15 @@ export const ProgressBlock = () => {
           <Typography
             text='Expand and progress'
             variant='title'
-            color={colors.mainText}
+            color={colors.black}
           />
           <Text>
             <Typography
-              color={colors.mainText}
+              color={colors.black}
               text='Lots of bright hamsters live in Hamsterville. Help them invent new tools and explore technologies to increase production of resources.
 '
+              lineHeight={'32px'}
+              fontSize={'24px'}
               variant='text'
             />
           </Text>
