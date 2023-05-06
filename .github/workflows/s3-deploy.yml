@@ -29,7 +29,7 @@ jobs:
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: deployments-hidden-wallet
+          SLACK_CHANNEL: "#deployments-hidden-wallet"
           SLACK_COLOR: ${{ job.status }}
           SLACK_TITLE: Message
           SLACK_MESSAGE: A new "hidden-wallet-landing" page has been published
@@ -41,7 +41,7 @@ jobs:
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: deployments-hidden-wallet
+          SLACK_CHANNEL: "#deployments-hidden-wallet"
           SLACK_COLOR: ${{ job.status }}
           SLACK_TITLE: Message
           SLACK_MESSAGE: A "hidden-wallet-landing" page publish pipeline has failed
