@@ -48,6 +48,7 @@ const Wrapper = styled.div(({ theme }) => ({
 
 const ProgressImage = styled.img(() => ({
   marginTop: '52px',
+  maxWidth: '100%',
 }));
 const Text = styled.div(() => ({
   marginTop: '24px',

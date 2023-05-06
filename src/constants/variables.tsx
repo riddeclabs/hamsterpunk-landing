@@ -14,3 +14,9 @@ export const menuValue = [
   { value: 'DETAILS', to: '#details', id: 3 },
   { value: 'FAQ', to: '#faq', id: 4 },
 ];
+
+export const mediaBreakpoints = {
+  sm: 768,
+  md: 1024,
+  lg: 1440,
+};
