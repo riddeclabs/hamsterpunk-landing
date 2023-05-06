@@ -1,7 +1,8 @@
 name: s3-deploy
 
 on:
-  push:
+  # FIXME: replace with `push` after debugging
+  pull_request:
     branches: [ master ]
 
 jobs:
