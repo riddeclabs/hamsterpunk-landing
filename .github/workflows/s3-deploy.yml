@@ -19,6 +19,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Set image tag
+        run: echo "VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+
       - name: Build React App
         run: npm install && npm run build
 
@@ -29,22 +32,20 @@ jobs:
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: "#deployments-hidden-wallet"
           SLACK_COLOR: ${{ job.status }}
-          SLACK_TITLE: Message
-          SLACK_MESSAGE: A new "hidden-wallet-landing" page has been published
-          SLACK_FOOTER: ""
-          SLACK_WEBHOOK: ${{ secrets.DOCKER_SLACK_WEBHOOK }}
+          SLACK_TITLE: "A new hidden-wallet-landing page version ${{ env.VERSION }} has been deployed. :rocket:"
+          SLACK_MESSAGE: ""
+          SLACK_FOOTER: https://hamsterpunk.net/
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: actions url,commit
 
       - name: Failure Slack Notification
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: "#deployments-hidden-wallet"
           SLACK_COLOR: ${{ job.status }}
-          SLACK_TITLE: Message
-          SLACK_MESSAGE: A "hidden-wallet-landing" page publish pipeline has failed
+          SLACK_TITLE: An hidden-wallet-landing page deployment pipeline has failed
+          SLACK_MESSAGE: ""
           SLACK_FOOTER: ""
-          SLACK_WEBHOOK: ${{ secrets.DOCKER_SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: actions url,commit
