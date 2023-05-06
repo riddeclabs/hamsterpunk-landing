@@ -1,6 +1,7 @@
 import advBorderImage from './advBorderImage.svg';
 import androidIcon from './android.svg';
 import iosIcon from './apple.svg';
+import burgerIcon from './burger.svg';
 import crossImage from './crossImage.svg';
 import hamster1 from './hamster1.png';
 import hamster2 from './hamster2.png';
@@ -15,9 +16,11 @@ import newWayImage from './newWayImage.png';
 import orangeBg from './organgeBg.png';
 import progressImage from './progressImage.png';
 import riddec from './riddec.svg';
+import riddecMobile from './riddecMobile.svg';
 
 export {
   mainImage,
+  burgerIcon,
   intersect,
   androidIcon,
   iosIcon,
@@ -34,7 +37,9 @@ export {
   hamster3,
   hamster4,
   hamster5,
+  riddecMobile,
 };
 
 export { ReactComponent as HamsterPunkText } from './hamsterpunkText.svg';
 export { ReactComponent as RiddecCreated } from './riddec.svg';
+export { ReactComponent as RiddecCreatedMobile } from './riddecMobile.svg';

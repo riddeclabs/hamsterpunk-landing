@@ -61,4 +61,8 @@ const Gallery = styled.div(() => ({
   '& >img': {
     maxWidth: useMediaValue('100%', '100%', 'initial', 'initial'),
   },
+
+  '@media screen and (max-width:845px)': {
+    width: '300px',
+  },
 }));

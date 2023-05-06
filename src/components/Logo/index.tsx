@@ -16,6 +16,10 @@ export const Logo = () => {
 
 const LogoStyle = styled.img(() => ({
   height: '48px',
+
+  '@media screen and (max-width: 768px)': {
+    height: '33px',
+  },
 }));
 
 const LogoText = styled.div(() => ({
@@ -26,6 +30,11 @@ const LogoText = styled.div(() => ({
   lineHeight: '29px',
   letterSpacing: '0.04em',
   marginLeft: '6px',
+
+  '@media screen and (max-width: 768px)': {
+    fontSize: '18px',
+    lineHeight: '20px',
+  },
 }));
 
 const LogoWrapper = styled.div(() => ({

@@ -5,14 +5,17 @@ import styled from 'styled-components';
 import {
   HamsterPunkText,
   RiddecCreated,
+  RiddecCreatedMobile,
   androidIcon,
   intersect,
   iosIcon,
   mainImage,
 } from '../../../assets/images';
 import { colors } from '../../../constants/variables';
+import { useMobile } from '../../../utils/commonFunctions';
 
 export const MainBlock = () => {
+  const isMobile = useMobile();
   return (
     <Wrapper>
       <TextBlock>
@@ -26,7 +29,7 @@ export const MainBlock = () => {
             <img alt='ios app' src={iosIcon} />
           </AppIcons>
 
-          <RiddecCreated />
+          {isMobile ? <RiddecCreatedMobile /> : <RiddecCreated />}
         </DevelopersBlock>
         <Intersect />
       </BottomBlock>
@@ -40,6 +43,11 @@ const Wrapper = styled.div(({ theme }) => ({
   background: `url(${mainImage})`,
   backgroundSize: 'cover',
   position: 'relative',
+
+  '@media screen and (max-width:768px)': {
+    height: '580px',
+    backgroundPosition: 'center',
+  },
 }));
 
 const TextBlock = styled.div(({ theme }) => ({
@@ -57,6 +65,20 @@ const TextBlock = styled.div(({ theme }) => ({
     color: colors.white,
     marginTop: '10px',
     textTransform: 'uppercase',
+    textAlign: 'center',
+    maxWidth: '90%',
+
+    '@media screen and (max-width:768px)': {
+      fontSize: '16px',
+      lineHeight: '16px',
+      marginTop: '-20px',
+    },
+
+    '@media screen and (max-width:600px)': {
+      fontSize: '8px',
+      lineHeight: '8px',
+      marginTop: '-40px',
+    },
   },
 }));
 
@@ -76,6 +98,10 @@ const Intersect = styled.div(() => ({
 
 const HamsterPunkTextStyled = styled(HamsterPunkText)(() => ({
   maxWidth: '90%',
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '-100px',
+  },
 }));
 
 const DevelopersBlock = styled.div(() => ({
@@ -84,10 +110,22 @@ const DevelopersBlock = styled.div(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   marginBottom: '57px',
+
+  '@media screen and (max-width:1440px)': {
+    maxWidth: '90%',
+  },
 }));
 
 const AppIcons = styled.div(() => ({
   display: 'flex',
   alignItems: 'center',
   gap: '4px',
+
+  '>img': {
+    cursor: 'pointer',
+
+    '@media screen and (max-width:768px)': {
+      width: '24px',
+    },
+  },
 }));

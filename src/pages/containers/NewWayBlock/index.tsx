@@ -75,4 +75,12 @@ const PositionContainer = styled.div(() => ({
 const Wrapper = styled.div(() => ({
   background: colors.grayBackground,
   marginTop: '132px',
+
+  '@media screen and (max-width:1440px)': {
+    marginTop: '64px',
+  },
+
+  '@media screen and (max-width:1024px)': {
+    marginTop: '84px',
+  },
 }));

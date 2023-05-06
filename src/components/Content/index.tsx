@@ -13,7 +13,7 @@ export const Content: FC<{
 
 const Container = styled.div<{ customStyles?: React.CSSProperties }>(
   ({ customStyles }) => ({
-    maxWidth: useMediaValue(343, 720, 976, 1312),
+    maxWidth: useMediaValue('90%', '720px', '976px', '1312px'),
     margin: '0 auto',
     width: '100%',
     height: '100%',

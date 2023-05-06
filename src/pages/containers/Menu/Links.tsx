@@ -34,4 +34,12 @@ const Wrapper = styled.div(() => ({
   display: 'flex',
   alignItems: 'center',
   gap: '87px',
+
+  '@media screen and (max-width: 1024px)': {
+    gap: '25px',
+  },
+
+  '@media screen and (max-width: 768px)': {
+    display: 'none',
+  },
 }));

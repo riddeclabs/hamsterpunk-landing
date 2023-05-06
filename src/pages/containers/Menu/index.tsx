@@ -4,11 +4,14 @@ import styled from 'styled-components';
 
 import { Links } from './Links';
 
+import { burgerIcon } from '../../../assets/images';
 import { Content } from '../../../components/Content';
 import { Logo } from '../../../components/Logo';
 import { colors } from '../../../constants/variables';
+import { useMobile } from '../../../utils/commonFunctions';
 
 export const Menu = () => {
+  const isMobile = useMobile();
   return (
     <div
       style={{
@@ -23,7 +26,7 @@ export const Menu = () => {
       <Content>
         <Wrapper>
           <Logo />
-          <Links />
+          {isMobile ? <BurgerButton src={burgerIcon} alt='menu' /> : <Links />}
         </Wrapper>
       </Content>
     </div>
@@ -38,3 +41,5 @@ const Wrapper = styled.div(() => ({
   color: colors.white,
   height: '65px',
 }));
+
+const BurgerButton = styled.img(() => ({ cursor: 'pointer' }));
