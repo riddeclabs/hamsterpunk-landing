@@ -35,6 +35,7 @@ export const VideoBlock = () => {
 
 const Block = styled.div(({ theme }) => ({
   width: '100%',
+  marginTop: '180px',
   paddingBottom: '24px',
   position: 'relative' || theme?.position,
 }));
