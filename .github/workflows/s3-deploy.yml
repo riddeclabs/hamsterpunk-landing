@@ -11,13 +11,40 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        -
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+
       - name: Build React App
         run: npm install && npm run build
+
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./build/ s3://hidden-wallet-landing --delete
+
+      - name: Success Slack Notification
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: deployments-hidden-wallet
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_TITLE: Message
+          SLACK_MESSAGE: A new "hidden-wallet-landing" page has been published
+          SLACK_FOOTER: ""
+          SLACK_WEBHOOK: ${{ secrets.DOCKER_SLACK_WEBHOOK }}
+          MSG_MINIMAL: actions url,commit
+
+      - name: Failure Slack Notification
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: deployments-hidden-wallet
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_TITLE: Message
+          SLACK_MESSAGE: A "hidden-wallet-landing" page publish pipeline has failed
+          SLACK_FOOTER: ""
+          SLACK_WEBHOOK: ${{ secrets.DOCKER_SLACK_WEBHOOK }}
+          MSG_MINIMAL: actions url,commit
