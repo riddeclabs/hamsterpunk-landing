@@ -3,7 +3,7 @@ name: s3-deploy
 on:
   # FIXME: replace with `push` after debugging
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build-publish-to-s3:
