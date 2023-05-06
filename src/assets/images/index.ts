@@ -2,6 +2,7 @@ import advBorderImage from './advBorderImage.svg';
 import androidIcon from './android.svg';
 import iosIcon from './apple.svg';
 import crossImage from './crossImage.svg';
+import humstervilleImage from './humstervillImage.png';
 import intersect from './intersect.svg';
 import logo from './logo.svg';
 import mainImage from './main.jpg';
@@ -18,6 +19,7 @@ export {
   logo,
   newWayImage,
   crossImage,
+  humstervilleImage,
   progressImage,
   advBorderImage,
 };
