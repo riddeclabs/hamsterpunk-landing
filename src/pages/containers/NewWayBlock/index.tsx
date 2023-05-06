@@ -12,7 +12,7 @@ export const NewWayBlock = () => {
     <Wrapper>
       <Content>
         <PositionContainer>
-          <div>
+          <div className='textBlockWrapper'>
             <Tittle>
               <Typography text={'A new way of Crypto Game!'} variant='title' />
             </Tittle>
@@ -46,14 +46,54 @@ const Tittle = styled.div(({ theme }) => ({
   letterSpacing: '0.04em',
   color: colors.titles,
   textTransform: theme?.capitalize || 'capitalize',
+
+  '@media screen and (max-width:1439px)': {
+    width: 'auto',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    textAlign: 'center',
+  },
 }));
 
-const CrossImage = styled.img(() => ({}));
-const NewWayImage = styled.img(() => ({}));
+const CrossImage = styled.img(() => ({
+  '@media screen and (max-width:1023px)': {
+    width: '50px',
+  },
 
-const CommonTextBlock = styled.div(() => ({
+  '@media screen and (max-width:768px)': {
+    width: '37px',
+  },
+}));
+const NewWayImage = styled.img(() => ({
+  '@media screen and (max-width:1439px)': {
+    maxWidth: '50%',
+  },
+
+  '@media screen and (max-width:768px)': {
+    maxWidth: '100%',
+  },
+}));
+
+const CommonTextBlock = styled.div(({ theme }) => ({
   width: '523px',
   marginTop: '176px',
+
+  '@media screen and (max-width:1439px)': {
+    width: 'auto',
+    marginTop: '25px',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center' || theme?.align,
+    textAlign: 'center',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '31px',
+  },
 }));
 
 const CommonText = styled.div(() => ({
@@ -64,23 +104,58 @@ const CommonText = styled.div(() => ({
   lineHeight: '134.52%',
   color: colors.mainText,
   marginTop: '31px',
+
+  '@media screen and (max-width:1023px)': {
+    marginTop: '16px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '14px',
+  },
 }));
 
-const PositionContainer = styled.div(() => ({
+const PositionContainer = styled.div(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
   width: '100%',
+
+  '@media screen and (max-width:1439px)': {
+    gap: '40px',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    flexDirection: 'column' || theme?.direction,
+    alignItems: 'center',
+    gap: '20px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    gap: '18px',
+  },
+
+  '& > .textBlockWrapper': {
+    '@media screen and (max-width:1439px)': {
+      maxWidth: '50%',
+    },
+    '@media screen and (max-width:1023px)': {
+      maxWidth: '100%',
+    },
+  },
 }));
 
 const Wrapper = styled.div(() => ({
   background: colors.grayBackground,
   marginTop: '132px',
 
-  '@media screen and (max-width:1440px)': {
+  '@media screen and (max-width:1439px)': {
     marginTop: '64px',
   },
 
-  '@media screen and (max-width:1024px)': {
-    marginTop: '84px',
+  '@media screen and (max-width:1023px)': {
+    marginTop: '46px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '24px',
   },
 }));

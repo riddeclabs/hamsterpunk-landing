@@ -31,8 +31,26 @@ const Wrapper = styled.div(({ theme }) => ({
   flexDirection: 'column' || theme.column,
   maxWidth: '346px',
   textAlign: 'center',
+
+  '@media screen and (max-width:1023px)': {
+    paddingBottom: '20px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    paddingBottom: '16px',
+  },
 }));
+
 const Title = styled.div(() => ({}));
+
 const Text = styled.div(() => ({
   marginTop: '33px',
+
+  '@media screen and (max-width:1023px)': {
+    marginTop: '22px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '16px',
+  },
 }));

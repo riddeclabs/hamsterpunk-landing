@@ -35,34 +35,56 @@ export const GalleryBlock = () => {
 };
 
 const Gallery = styled.div(() => ({
-  marginTop: useMediaValue('24px', '36px', '36px', '52px'),
+  marginTop: '52px',
   display: 'grid',
-  gridTemplateColumns: useMediaValue(
-    '164px 164px',
-    '313px 313px',
-    '313px 313px',
-    '2fr 1fr 1fr'
-  ),
-  gridTemplateRows: useMediaValue(
-    '343px 164px 164px',
-    '646px 313px 313px',
-    '646px 313px 313px',
-    'auto'
-  ),
+  gridTemplateColumns: '2fr 1fr 1fr',
+  gridTemplateRows: 'auto',
+  gridGap: '20px',
   justifyContent: 'center',
-  gridGap: useMediaValue('15px', '20px', '20px', '20px'),
-  '& .firstHamsterImage': {
-    gridRowStart: 1,
-    gridRowEnd: useMediaValue(2, 2, 2, 3),
-    gridColumnStart: useMediaValue('1', '1', '1', 'auto'),
-    gridColumnEnd: useMediaValue('3', '3', 'auto', 'auto'),
+
+  '@media screen and (max-width:1439px)': {
+    marginTop: '36px',
+    gridTemplateColumns: '313px 313px',
+    gridTemplateRows: '646px 313px 313px',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    marginTop: '36px',
+    gridTemplateColumns: '313px 313px',
+    gridTemplateRows: '646px 313px 313px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '24px',
+    gridTemplateColumns: '164px 164px',
+    gridTemplateRows: '343px 164px 164px',
+    gridGap: '15px',
   },
 
   '& >img': {
-    maxWidth: useMediaValue('100%', '100%', 'initial', 'initial'),
+    maxWidth: '313px',
+
+    '@media screen and (max-width:768px)': {
+      maxWidth: '164px',
+    },
   },
 
-  '@media screen and (max-width:845px)': {
-    width: '300px',
+  '& .firstHamsterImage': {
+    maxWidth: '646px',
+
+    gridRowStart: 1,
+    gridRowEnd: 3,
+    gridColumnStart: 'auto',
+    gridColumnEnd: 'auto',
+
+    '@media screen and (max-width:1439px)': {
+      gridRowEnd: 2,
+      gridColumnStart: 1,
+      gridColumnEnd: 3,
+    },
+
+    '@media screen and (max-width:768px)': {
+      maxWidth: '343px',
+    },
   },
 }));

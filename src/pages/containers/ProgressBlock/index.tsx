@@ -37,6 +37,18 @@ export const ProgressBlock = () => {
 
 const Block = styled.div(() => ({
   marginTop: '180px',
+
+  '@media screen and (max-width:1439px)': {
+    marginTop: '88px',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    marginTop: '68px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '68px',
+  },
 }));
 
 const Wrapper = styled.div(({ theme }) => ({
@@ -49,8 +61,33 @@ const Wrapper = styled.div(({ theme }) => ({
 const ProgressImage = styled.img(() => ({
   marginTop: '52px',
   maxWidth: '100%',
+
+  '@media screen and (max-width:1439px)': {
+    marginTop: '36px',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    marginTop: '30px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '24px',
+  },
 }));
+
 const Text = styled.div(() => ({
   marginTop: '24px',
   maxWidth: '598px',
+
+  '@media screen and (max-width:1439px)': {
+    marginTop: '20px',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    marginTop: '18px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '16px',
+  },
 }));

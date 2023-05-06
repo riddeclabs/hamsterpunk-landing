@@ -39,10 +39,38 @@ const Wrapper = styled.div(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column' || theme.column,
+
+  '@media screen and (max-width:1439px)': {
+    marginTop: '88px',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    marginTop: '68px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '68px',
+  },
 }));
-const HeadBorder = styled.img(() => ({}));
-const WrapperItems = styled.div(() => ({
+
+const HeadBorder = styled.img(() => ({
+  maxWidth: '80%',
+}));
+
+const WrapperItems = styled.div(({ theme }) => ({
   marginTop: '52px',
   display: 'flex',
   gap: '110px',
+  alignItems: 'flex-start',
+
+  '@media screen and (max-width:1023px)': {
+    gap: '50px',
+    flexWrap: 'wrap' || theme?.wrap,
+    justifyContent: 'center',
+  },
+
+  '@media screen and (max-width:768px)': {
+    gap: '20px',
+    marginTop: '57px',
+  },
 }));

@@ -1,6 +1,7 @@
 import advBorderImage from './advBorderImage.svg';
 import androidIcon from './android.svg';
 import iosIcon from './apple.svg';
+import arrow from './arrow.svg';
 import burgerIcon from './burger.svg';
 import crossImage from './crossImage.svg';
 import hamster1 from './hamster1.png';
@@ -38,6 +39,7 @@ export {
   hamster4,
   hamster5,
   riddecMobile,
+  arrow,
 };
 
 export { ReactComponent as HamsterPunkText } from './hamsterpunkText.svg';

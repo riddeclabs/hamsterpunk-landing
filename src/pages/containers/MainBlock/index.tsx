@@ -111,7 +111,7 @@ const DevelopersBlock = styled.div(() => ({
   justifyContent: 'space-between',
   marginBottom: '57px',
 
-  '@media screen and (max-width:1440px)': {
+  '@media screen and (max-width:1439px)': {
     maxWidth: '90%',
   },
 }));

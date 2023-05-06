@@ -32,5 +32,26 @@ const Text = styled.p<{
     variant === 'text' ? '35px' : variant === 'title' ? '60px' : '34px',
   fontWeight: 400,
 
+  '@media screen and (max-width:1439px)': {
+    fontSize:
+      variant === 'text' ? '20px' : variant === 'title' ? '40px' : '26px',
+    lineHeight:
+      variant === 'text' ? '30px' : variant === 'title' ? '50px' : '30px',
+  },
+
+  '@media screen and (max-width:1023x)': {
+    fontSize:
+      variant === 'text' ? '16px' : variant === 'title' ? '30px' : '20px',
+    lineHeight:
+      variant === 'text' ? '20px' : variant === 'title' ? '40px' : '24px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    fontSize:
+      variant === 'text' ? '12px' : variant === 'title' ? '18px' : '14px',
+    lineHeight:
+      variant === 'text' ? '16px' : variant === 'title' ? '21px' : '16px',
+  },
+
   ...customStyles,
 }));
