@@ -1,25 +1,26 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Hamster Punk",
+  "short_name": "HamsterPunk",
+  "scope": "/",
+  "start_url": "/",
+  "description": "Hamsterpunk is an ultimate idle farming game with cute and curious hamsters to command, manifold structures to build, upgrades to unlock and rewards to get.",
+  "orientation": "portrait",
+  "display": "fullscreen",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/favicons/android-chrome-36x36.png",
+      "sizes": "36x36",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "/favicons/android-chrome-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "/favicons/android-chrome-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }

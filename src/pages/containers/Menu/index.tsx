@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import styled from 'styled-components';
 
+import { DrawerMenu } from './DrawerMenu';
 import { Links } from './Links';
 
 import { burgerIcon } from '../../../assets/images';
@@ -37,7 +38,9 @@ export const Menu = () => {
           ) : (
             <Links setShowMenu={setShowMenu} />
           )}
-          {showMenu && <Links setShowMenu={setShowMenu} />}
+          {isMobile && (
+            <DrawerMenu setShowMenu={setShowMenu} isActive={showMenu} />
+          )}
         </Wrapper>
       </Content>
     </div>

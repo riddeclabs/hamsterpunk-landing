@@ -18,7 +18,7 @@ import { colors } from '../constants/variables';
 
 export const HomePage = () => {
   return (
-    <Wrapper>
+    <Wrapper id='home'>
       <Menu />
       <MainBlock />
       <NewWayBlock />

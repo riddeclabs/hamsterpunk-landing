@@ -16,7 +16,10 @@ import { useMediaValue } from '../../../utils/commonFunctions';
 
 export const GalleryBlock = () => {
   return (
-    <Content customStyles={{ paddingTop: useMediaValue(100, 110, 120, 230) }}>
+    <Content
+      customStyles={{ paddingTop: useMediaValue(100, 110, 120, 230) }}
+      id='details'
+    >
       <Typography
         variant='title'
         text='Hamsters'
@@ -60,6 +63,7 @@ const Text = styled.div(({ theme }) => ({
   '@media screen and (max-width:768px)': {
     margin: '24px auto 0',
     width: '398px',
+    maxWidth: '100%',
   },
 }));
 

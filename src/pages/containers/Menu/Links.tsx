@@ -73,14 +73,12 @@ const Wrapper = styled.div(({ theme }) => ({
   },
 
   '@media screen and (max-width: 768px)': {
+    position: 'fixed',
+    left: 0,
     right: 0,
-    top: '24px',
-    flexDirection: 'column',
-    position: 'absolute' || theme?.absolute,
-    border: `1px solid ${colors.titles}`,
-    padding: '15px 0',
-    borderRadius: '8px',
-    background: colors.white,
-    color: colors.titles,
+    background: colors.black,
+    color: colors.mainText,
+    top: 0,
+    flexDirection: 'column' || theme?.column,
   },
 }));

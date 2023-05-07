@@ -7,8 +7,13 @@ import { useMediaValue } from '../../utils/commonFunctions';
 export const Content: FC<{
   children: React.ReactNode;
   customStyles?: React.CSSProperties;
-}> = ({ children, customStyles }) => {
-  return <Container customStyles={customStyles}>{children}</Container>;
+  id?: string;
+}> = ({ children, customStyles, id }) => {
+  return (
+    <Container id={id} customStyles={customStyles}>
+      {children}
+    </Container>
+  );
 };
 
 const Container = styled.div<{ customStyles?: React.CSSProperties }>(

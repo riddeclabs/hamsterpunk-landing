@@ -9,7 +9,7 @@ import { useMediaValue } from '../../../utils/commonFunctions';
 
 export const VideoBlock = () => {
   return (
-    <Block>
+    <Block id='trailer'>
       <Content>
         <Wrapper>
           <Typography

@@ -91,5 +91,6 @@ const Text = styled.div(({ theme }) => ({
   '@media screen and (max-width:768px)': {
     margin: '24px auto 0',
     width: '398px',
+    maxWidth: '100%',
   },
 }));

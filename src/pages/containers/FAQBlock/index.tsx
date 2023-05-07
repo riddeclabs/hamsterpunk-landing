@@ -12,7 +12,7 @@ export const FAQBlock = () => {
   const [activeQuestion, setActiveQuestion] = useState<number | null>(1);
 
   return (
-    <Wrapper>
+    <Wrapper id='faq'>
       <Content>
         <Typography
           text='FAQ'
