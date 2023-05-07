@@ -23,6 +23,16 @@ export const GalleryBlock = () => {
         color={colors.black}
         textAlign='center'
       />
+      <Text>
+        <Typography
+          text={
+            'Meet the cute, curious and a bit lazy hamsters of Hamsterpunk. Help them to harvest crops, gather resources, expand and prosper.'
+          }
+          variant='text'
+          color={colors.black}
+        />
+      </Text>
+
       <Gallery>
         <img className='firstHamsterImage' alt='hamster' src={hamster1} />
         <img alt='hamster' src={hamster2} />
@@ -33,6 +43,25 @@ export const GalleryBlock = () => {
     </Content>
   );
 };
+
+const Text = styled.div(({ theme }) => ({
+  margin: '52px auto 0',
+  textAlign: 'center' || theme?.center,
+  width: '598px',
+
+  '@media screen and (max-width:1439px)': {
+    margin: '42px auto 0',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    margin: '32px auto 0',
+  },
+
+  '@media screen and (max-width:768px)': {
+    margin: '24px auto 0',
+    width: '398px',
+  },
+}));
 
 const Gallery = styled.div(() => ({
   marginTop: '52px',

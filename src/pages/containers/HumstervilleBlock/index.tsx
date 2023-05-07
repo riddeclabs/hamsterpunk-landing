@@ -20,8 +20,7 @@ export const HumstervilleBlock = () => {
           <Text>
             <Typography
               color={colors.black}
-              text='Hamsterville is a small island, floating in the sky. Lead the exploration of new lands and expand the island to give your hamsters more space to live in.
-'
+              text='Welcome to the home of hamsters - a cosy island floating in the sky. Explore and attach lands to make Hamsterville flourish.'
               lineHeight={'32px'}
               fontSize={'24px'}
               variant='text'
@@ -74,19 +73,21 @@ const ProgressImage = styled.img(() => ({
     marginTop: '24px',
   },
 }));
-const Text = styled.div(() => ({
-  marginTop: '24px',
-  maxWidth: '598px',
+const Text = styled.div(({ theme }) => ({
+  margin: '52px auto 0',
+  textAlign: 'center' || theme?.center,
+  width: '598px',
 
   '@media screen and (max-width:1439px)': {
-    marginTop: '20px',
+    margin: '42px auto 0',
   },
 
   '@media screen and (max-width:1023px)': {
-    marginTop: '18px',
+    margin: '32px auto 0',
   },
 
   '@media screen and (max-width:768px)': {
-    marginTop: '16px',
+    margin: '24px auto 0',
+    width: '398px',
   },
 }));

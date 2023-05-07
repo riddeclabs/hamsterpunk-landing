@@ -81,7 +81,7 @@ const CommonTextBlock = styled.div(({ theme }) => ({
 
   '@media screen and (max-width:1439px)': {
     width: 'auto',
-    marginTop: '25px',
+    marginTop: '112px',
   },
 
   '@media screen and (max-width:1023px)': {
@@ -89,6 +89,7 @@ const CommonTextBlock = styled.div(({ theme }) => ({
     flexDirection: 'column',
     alignItems: 'center' || theme?.align,
     textAlign: 'center',
+    marginTop: '60px',
   },
 
   '@media screen and (max-width:768px)': {

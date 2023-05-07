@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {
   HamsterPunkText,
-  RiddecCreated,
+  // RiddecCreated,
   RiddecCreatedMobile,
   androidIcon,
   intersect,
@@ -12,10 +12,10 @@ import {
   mainImage,
 } from '../../../assets/images';
 import { colors } from '../../../constants/variables';
-import { useMobile } from '../../../utils/commonFunctions';
+// import { useMobile } from '../../../utils/commonFunctions';
 
 export const MainBlock = () => {
-  const isMobile = useMobile();
+  // const isMobile = useMobile();
   return (
     <Wrapper>
       <TextBlock>
@@ -29,7 +29,8 @@ export const MainBlock = () => {
             <img alt='ios app' src={iosIcon} />
           </AppIcons>
 
-          {isMobile ? <RiddecCreatedMobile /> : <RiddecCreated />}
+          {/* {isMobile ? <RiddecCreatedMobile /> : <RiddecCreated />} */}
+          <RiddecCreatedMobile />
         </DevelopersBlock>
         <Intersect />
       </BottomBlock>
