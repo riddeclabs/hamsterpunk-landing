@@ -17,6 +17,15 @@ export const VideoBlock = () => {
             variant='title'
             textAlign='center'
           />
+          <Text>
+            <Typography
+              text={
+                'Have a sneak peek at the setting and art of the game in this reveal trailer'
+              }
+              variant='text'
+            />
+          </Text>
+
           <VideoWrapper>
             <iframe
               width='100%'
@@ -33,6 +42,21 @@ export const VideoBlock = () => {
     </Block>
   );
 };
+
+const Text = styled.div(() => ({
+  marginTop: '52px',
+  '@media screen and (max-width:1439px)': {
+    marginTop: '42px',
+  },
+
+  '@media screen and (max-width:1023px)': {
+    marginTop: '32px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '24px',
+  },
+}));
 
 const Block = styled.div(({ theme }) => ({
   width: '100%',
