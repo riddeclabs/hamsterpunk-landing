@@ -1,0 +1,50 @@
+name: s3-deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-publish-to-s3:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Set common environment variables
+        run: echo "VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+
+      - name: Build React App
+        run: npm install && npm run build
+
+      - name: Deploy app build to S3 bucket
+        run: aws s3 sync ./build/ s3://hidden-wallet-landing --delete
+
+      - name: Success Slack Notification
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_TITLE: Message
+          SLACK_MESSAGE: "A new hidden-wallet-landing page version ${{ env.VERSION }} has been deployed. :rocket:"
+          SLACK_FOOTER: https://hamsterpunk.net/
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          MSG_MINIMAL: actions url,commit
+
+      - name: Failure Slack Notification
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_TITLE: Message
+          SLACK_MESSAGE: An hidden-wallet-landing page deployment pipeline has failed
+          SLACK_FOOTER: ""
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          MSG_MINIMAL: actions url,commit
