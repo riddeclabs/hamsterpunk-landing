@@ -9,7 +9,7 @@ export const Logo = () => {
   return (
     <LogoWrapper>
       <LogoStyle alt='' src={logo} />
-      <LogoText>HUMSTERPUNK</LogoText>
+      <LogoText>HAMSTERPUNK</LogoText>
     </LogoWrapper>
   );
 };
