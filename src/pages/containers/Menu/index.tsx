@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components';
 
@@ -12,6 +12,8 @@ import { useMobile } from '../../../utils/commonFunctions';
 
 export const Menu = () => {
   const isMobile = useMobile();
+
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <div
       style={{
@@ -26,20 +28,32 @@ export const Menu = () => {
       <Content>
         <Wrapper>
           <Logo />
-          {isMobile ? <BurgerButton src={burgerIcon} alt='menu' /> : <Links />}
+          {isMobile ? (
+            <BurgerButton
+              src={burgerIcon}
+              alt='menu'
+              onClick={() => setShowMenu(true)}
+            />
+          ) : (
+            <Links setShowMenu={setShowMenu} />
+          )}
+          {showMenu && <Links setShowMenu={setShowMenu} />}
         </Wrapper>
       </Content>
     </div>
   );
 };
 
-const Wrapper = styled.div(() => ({
+const Wrapper = styled.div(({ theme }) => ({
   width: '100%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   color: colors.white,
   height: '65px',
+  '@media screen and (max-width: 768px)': {
+    position: 'relative' || theme?.relative,
+  },
 }));
 
 const BurgerButton = styled.img(() => ({ cursor: 'pointer' }));

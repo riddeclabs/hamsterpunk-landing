@@ -2,9 +2,14 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import { crossImage } from '../../../assets/images';
 import { colors, menuValue } from '../../../constants/variables';
 
-export const Links = () => {
+type LinksMenuPropsType = {
+  setShowMenu: (value: React.SetStateAction<boolean>) => void;
+};
+
+export const Links = ({ setShowMenu }: LinksMenuPropsType) => {
   return (
     <Wrapper>
       {menuValue.map((item) => (
@@ -12,11 +17,28 @@ export const Links = () => {
           {item.value}
         </LinkMenu>
       ))}
+      <CrossImage
+        alt='cross'
+        src={crossImage}
+        onClick={() => setShowMenu(false)}
+      />
     </Wrapper>
   );
 };
 
-const LinkMenu = styled.a(() => ({
+const CrossImage = styled.img(({ theme }) => ({
+  display: 'none',
+  width: '10px',
+  top: '4px',
+  right: '4px',
+  cursor: 'pointer',
+  '@media screen and (max-width: 768px)': {
+    display: 'block',
+    position: 'absolute' || theme?.absolute,
+  },
+}));
+
+const LinkMenu = styled.a(({ theme }) => ({
   fontFamily: 'Josefin Sans',
   fontStyle: 'normal',
   fontWeight: 400,
@@ -28,9 +50,20 @@ const LinkMenu = styled.a(() => ({
   ':hover': {
     color: colors.titles,
   },
+
+  '@media screen and (max-width: 768px)': {
+    color: colors.titles,
+    borderBottom: `1px solid ${colors.titles}`,
+    width: '100%',
+    textAlign: 'center' || theme?.center,
+    padding: '0 40px',
+    ':hover': {
+      color: colors.mainText,
+    },
+  },
 }));
 
-const Wrapper = styled.div(() => ({
+const Wrapper = styled.div(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   gap: '87px',
@@ -40,6 +73,14 @@ const Wrapper = styled.div(() => ({
   },
 
   '@media screen and (max-width: 768px)': {
-    display: 'none',
+    right: 0,
+    top: '24px',
+    flexDirection: 'column',
+    position: 'absolute' || theme?.absolute,
+    border: `1px solid ${colors.titles}`,
+    padding: '15px 0',
+    borderRadius: '8px',
+    background: colors.white,
+    color: colors.titles,
   },
 }));
