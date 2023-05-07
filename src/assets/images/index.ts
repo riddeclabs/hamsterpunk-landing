@@ -11,6 +11,7 @@ import hamster4 from './hamster4.png';
 import hamster5 from './hamster5.png';
 import humstervilleImage from './humstervillImage.png';
 import intersect from './intersect.svg';
+import intersectBottom from './intersectBottom.svg';
 import logo from './logo.svg';
 import mainImage from './main.jpg';
 import newWayImage from './newWayImage.png';
@@ -40,6 +41,7 @@ export {
   hamster5,
   riddecMobile,
   arrow,
+  intersectBottom,
 };
 
 export { ReactComponent as HamsterPunkText } from './hamsterpunkText.svg';

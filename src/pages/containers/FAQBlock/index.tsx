@@ -37,13 +37,16 @@ export const FAQBlock = () => {
 
 const Wrapper = styled.div(() => ({
   marginTop: '180px',
+  paddingBottom: '138px',
 
   '@media screen and (max-width:1439px)': {
     marginTop: '88px',
+    paddingBottom: '68px',
   },
 
   '@media screen and (max-width:1023px)': {
     marginTop: '68px',
+    paddingBottom: '48px',
   },
 
   '@media screen and (max-width:768px)': {
