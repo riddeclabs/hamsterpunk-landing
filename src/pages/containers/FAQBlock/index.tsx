@@ -41,10 +41,12 @@ const Wrapper = styled.div(() => ({
 
   '@media screen and (max-width:1439px)': {
     marginTop: '88px',
+    paddingBottom: '68px',
   },
 
   '@media screen and (max-width:1023px)': {
     marginTop: '68px',
+    paddingBottom: '68px',
   },
 
   '@media screen and (max-width:768px)': {
@@ -54,7 +56,7 @@ const Wrapper = styled.div(() => ({
 
 const QuestionsWrapper = styled.div(() => ({
   marginTop: '52px',
-  paddingBottom: '0px',
+  paddingBottom: '150px',
 
   '>div:first-of-type': {
     borderTop: 'none',
@@ -62,13 +64,16 @@ const QuestionsWrapper = styled.div(() => ({
 
   '@media screen and (max-width:1439px)': {
     marginTop: '36px',
+    paddingBottom: '108px',
   },
 
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
     marginTop: '30px',
+    paddingBottom: '108px',
   },
 
   '@media screen and (max-width:768px)': {
     marginTop: '24px',
+    paddingBottom: '68px',
   },
 }));

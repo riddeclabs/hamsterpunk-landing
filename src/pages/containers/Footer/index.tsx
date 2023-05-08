@@ -6,11 +6,13 @@ import { intersectBottom } from '../../../assets/images';
 import { Content } from '../../../components/Content';
 import { Logo } from '../../../components/Logo';
 import { colors } from '../../../constants/variables';
+import { Subscription } from '../Subscription';
 
 export const Footer = () => {
   return (
     <Block>
       <Content>
+        <Subscription />
         <Wrapper>
           <Logo />
           <CopyBlock>2023 Riddec. All rights reserved</CopyBlock>
@@ -22,12 +24,15 @@ export const Footer = () => {
 };
 
 const Wrapper = styled.div(({ theme }) => ({
-  display: 'flex',
+  display: 'flex' || theme?.display,
   justifyContent: 'space-between',
   alignItems: 'center',
-  paddingBottom: '76px',
+  paddingBottom: '66px',
+  marginTop: '36px',
+
   '@media screen and (max-width:768px)': {
-    flexDirection: 'column' || theme.column,
+    paddingBottom: '40px',
+    flexDirection: 'column',
   },
 }));
 
@@ -52,5 +57,13 @@ const Intersect = styled.div(({ theme }) => ({
   height: '86px',
   background: `url(${intersectBottom})`,
   backgroundSize: 'cover',
-  top: '-85px',
+  top: '-196px',
+
+  '@media screen and (max-width:1440px)': {
+    top: '-152px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    top: '-85px',
+  },
 }));
