@@ -11,6 +11,7 @@ import { MainBlock } from './containers/MainBlock';
 import { Menu } from './containers/Menu';
 import { NewWayBlock } from './containers/NewWayBlock';
 import { ProgressBlock } from './containers/ProgressBlock';
+import { Subscription } from './containers/Subscription';
 import { VideoBlock } from './containers/VideoBlock';
 
 import { orangeBg } from '../assets/images';
@@ -29,6 +30,7 @@ export const HomePage = () => {
         <ProgressBlock />
         <HumstervilleBlock />
         <FAQBlock />
+        <Subscription />
       </OrangeBackgroundWrapper>
       <Footer />
     </Wrapper>

@@ -37,16 +37,14 @@ export const FAQBlock = () => {
 
 const Wrapper = styled.div(() => ({
   marginTop: '110px',
-  paddingBottom: '0px',
+  paddingBottom: 0,
 
   '@media screen and (max-width:1439px)': {
     marginTop: '88px',
-    paddingBottom: '68px',
   },
 
   '@media screen and (max-width:1023px)': {
     marginTop: '68px',
-    paddingBottom: '68px',
   },
 
   '@media screen and (max-width:768px)': {
@@ -56,7 +54,7 @@ const Wrapper = styled.div(() => ({
 
 const QuestionsWrapper = styled.div(() => ({
   marginTop: '52px',
-  paddingBottom: '180px',
+  paddingBottom: '0px',
 
   '>div:first-of-type': {
     borderTop: 'none',
@@ -64,16 +62,13 @@ const QuestionsWrapper = styled.div(() => ({
 
   '@media screen and (max-width:1439px)': {
     marginTop: '36px',
-    paddingBottom: '88px',
   },
 
   '@media screen and (max-width:1023px)': {
     marginTop: '30px',
-    paddingBottom: '68px',
   },
 
   '@media screen and (max-width:768px)': {
     marginTop: '24px',
-    paddingBottom: '68px',
   },
 }));
