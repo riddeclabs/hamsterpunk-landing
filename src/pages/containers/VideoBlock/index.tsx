@@ -22,6 +22,7 @@ export const VideoBlock = () => {
                 'Have a sneak peek at the setting and art of the game in this reveal trailer'
               }
               variant='text'
+              textAlign='center'
             />
           </Text>
 

@@ -32,8 +32,8 @@ export const Subscription = () => {
 
         <Text>
           <TypographyDescription>
-            Remember, the world of gaming never stands still. Stay ahead, stay
-            informed, and stay connected with our updates or news subscription.{' '}
+            Remember, the world of gaming never stands still. Subscribe and stay
+            informed.
           </TypographyDescription>
         </Text>
         <Form onSubmit={handleSubmit}>
