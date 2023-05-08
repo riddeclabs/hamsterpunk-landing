@@ -36,7 +36,7 @@ export const ProgressBlock = () => {
 };
 
 const Block = styled.div(() => ({
-  marginTop: '180px',
+  marginTop: '110px',
 
   '@media screen and (max-width:1439px)': {
     marginTop: '88px',

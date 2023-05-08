@@ -20,7 +20,7 @@ export const MainBlock = () => {
     <Wrapper>
       <TextBlock>
         <HamsterPunkTextStyled />
-        <h2>Play to earn idle game that teaches crypto.</h2>
+        <h2>Play to earn idle game that teaches crypto</h2>
       </TextBlock>
       <BottomBlock>
         <DevelopersBlock>
@@ -30,7 +30,9 @@ export const MainBlock = () => {
           </AppIcons>
 
           {/* {isMobile ? <RiddecCreatedMobile /> : <RiddecCreated />} */}
-          <RiddecCreatedMobile />
+          <a href='https://www.riddec.com/' target='_blank' rel='noreferrer'>
+            <RiddecCreatedMobile style={{ cursor: 'pointer' }} />
+          </a>
         </DevelopersBlock>
         <Intersect />
       </BottomBlock>
@@ -44,6 +46,10 @@ const Wrapper = styled.div(({ theme }) => ({
   background: `url(${mainImage})`,
   backgroundSize: 'cover',
   position: 'relative',
+
+  '@media screen and (max-width:1439px)': {
+    backgroundPosition: 'center',
+  },
 
   '@media screen and (max-width:768px)': {
     height: '580px',

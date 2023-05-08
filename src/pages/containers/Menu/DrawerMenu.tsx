@@ -45,7 +45,7 @@ const Wrapper = styled.div<{ isActive?: boolean }>(({ isActive }) => ({
   left: 0,
   right: 0,
   background: colors.black,
-  top: isActive ? '0' : '-257px',
+  top: isActive ? '0' : '-287px',
   transition: '.5s top',
 }));
 
@@ -64,6 +64,7 @@ const LinksWrapper = styled.div(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column' || theme?.column,
   alignItems: 'center',
+  padding: '15px 0',
 }));
 
 const BurgerButton = styled.img(() => ({ cursor: 'pointer' }));

@@ -60,7 +60,7 @@ const Text = styled.div(() => ({
 
 const Block = styled.div(({ theme }) => ({
   width: '100%',
-  marginTop: '180px',
+  marginTop: '110px',
   paddingBottom: '24px',
   position: 'relative' || theme?.position,
 

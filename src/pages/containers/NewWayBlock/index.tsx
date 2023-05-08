@@ -14,7 +14,10 @@ export const NewWayBlock = () => {
         <PositionContainer>
           <div className='textBlockWrapper'>
             <Tittle>
-              <Typography text={'A new way of Crypto Game!'} variant='title' />
+              <Typography
+                text={'Play to earn. Play to learn.'}
+                variant='title'
+              />
             </Tittle>
 
             <CommonTextBlock>
@@ -48,16 +51,17 @@ const Tittle = styled.div(({ theme }) => ({
   textTransform: theme?.capitalize || 'capitalize',
 
   '@media screen and (max-width:1439px)': {
-    width: 'auto',
+    width: '332px',
   },
 
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
+    width: 'auto',
     textAlign: 'center',
   },
 }));
 
 const CrossImage = styled.img(() => ({
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
     width: '50px',
   },
 
@@ -68,6 +72,10 @@ const CrossImage = styled.img(() => ({
 const NewWayImage = styled.img(() => ({
   '@media screen and (max-width:1439px)': {
     maxWidth: '50%',
+  },
+
+  '@media screen and (max-width:1024px)': {
+    maxWidth: '75%',
   },
 
   '@media screen and (max-width:768px)': {
@@ -84,7 +92,7 @@ const CommonTextBlock = styled.div(({ theme }) => ({
     marginTop: '112px',
   },
 
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center' || theme?.align,
@@ -106,7 +114,7 @@ const CommonText = styled.div(() => ({
   color: colors.mainText,
   marginTop: '31px',
 
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
     marginTop: '16px',
   },
 
@@ -124,7 +132,7 @@ const PositionContainer = styled.div(({ theme }) => ({
     gap: '40px',
   },
 
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
     flexDirection: 'column' || theme?.direction,
     alignItems: 'center',
     gap: '20px',
@@ -138,7 +146,7 @@ const PositionContainer = styled.div(({ theme }) => ({
     '@media screen and (max-width:1439px)': {
       maxWidth: '50%',
     },
-    '@media screen and (max-width:1023px)': {
+    '@media screen and (max-width:1024px)': {
       maxWidth: '100%',
     },
   },
@@ -152,7 +160,7 @@ const Wrapper = styled.div(() => ({
     marginTop: '64px',
   },
 
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
     marginTop: '46px',
   },
 

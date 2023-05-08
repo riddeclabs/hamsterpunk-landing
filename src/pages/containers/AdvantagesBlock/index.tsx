@@ -44,7 +44,7 @@ const Wrapper = styled.div(({ theme }) => ({
     marginTop: '88px',
   },
 
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
     marginTop: '68px',
   },
 
@@ -63,7 +63,7 @@ const WrapperItems = styled.div(({ theme }) => ({
   gap: '110px',
   alignItems: 'flex-start',
 
-  '@media screen and (max-width:1023px)': {
+  '@media screen and (max-width:1024px)': {
     gap: '50px',
     flexWrap: 'wrap' || theme?.wrap,
     justifyContent: 'center',
