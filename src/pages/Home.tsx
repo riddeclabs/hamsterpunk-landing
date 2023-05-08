@@ -35,9 +35,10 @@ export const HomePage = () => {
   );
 };
 
-const Wrapper = styled.div(() => ({
+const Wrapper = styled.div(({ theme }) => ({
   width: '100%',
   background: colors.grayBackground,
+  overflowX: 'hidden' || theme?.overflow,
 }));
 
 const OrangeBackgroundWrapper = styled.div(() => ({

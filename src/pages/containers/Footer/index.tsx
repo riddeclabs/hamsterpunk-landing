@@ -53,7 +53,7 @@ const Intersect = styled.div(({ theme }) => ({
   position: 'absolute' || theme?.position,
   left: '-1px',
   right: '-1px',
-  width: '100%',
+  width: 'calc(100% + 2px)',
   height: '86px',
   background: `url(${intersectBottom})`,
   backgroundSize: 'cover',
