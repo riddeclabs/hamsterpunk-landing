@@ -23,6 +23,9 @@ jobs:
 
       - name: Build React App
         run: npm install && npm run build
+        env:
+          CI: true
+          REACT_APP_FORM_KEY: ${{ secrets.REACT_APP_FORM_KEY }}
 
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./build/ s3://hidden-wallet-landing --delete
@@ -32,9 +35,9 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_COLOR: ${{ job.status }}
-          SLACK_TITLE: Message
-          SLACK_MESSAGE: "A new hidden-wallet-landing page version ${{ env.VERSION }} has been deployed. :rocket:"
-          SLACK_FOOTER: https://hamsterpunk.net/
+          SLACK_TITLE: "A new hidden-wallet-landing page version ${{ env.VERSION }} has been deployed. :rocket:"
+          SLACK_MESSAGE: ""
+          SLACK_FOOTER: https://hamsterpunk.net
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: actions url,commit
 
@@ -43,8 +46,8 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_COLOR: ${{ job.status }}
-          SLACK_TITLE: Message
-          SLACK_MESSAGE: An hidden-wallet-landing page deployment pipeline has failed
+          SLACK_TITLE: An hidden-wallet-landing page deployment pipeline has failed
+          SLACK_MESSAGE: ""
           SLACK_FOOTER: ""
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: actions url,commit
