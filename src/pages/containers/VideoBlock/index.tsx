@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { intersect } from '../../../assets/images';
 import { Content } from '../../../components/Content';
 import { Typography } from '../../../components/Typography';
-import { useMediaValue } from '../../../utils/commonFunctions';
 
 export const VideoBlock = () => {
   return (
@@ -29,7 +28,6 @@ export const VideoBlock = () => {
           <VideoWrapper>
             <iframe
               width='100%'
-              height={useMediaValue('323px', '400px', '500px', '639px')}
               src='https://www.youtube.com/embed/tQD1BNZgjYk?controls=0'
               title='YouTube video player'
               frameBorder='0'
@@ -67,6 +65,10 @@ const Block = styled.div(({ theme }) => ({
   '@media screen and (max-width:1439px)': {
     marginTop: '68px',
   },
+
+  '@media screen and (max-width:768px)': {
+    marginTop: '50px',
+  },
 }));
 
 const Wrapper = styled.div(({ theme }) => ({
@@ -78,6 +80,26 @@ const Wrapper = styled.div(({ theme }) => ({
 const VideoWrapper = styled.div(() => ({
   margin: '52px 0',
   width: '100%',
+
+  '& iframe': {
+    height: '639px',
+
+    '@media screen and (max-width:1439px)': {
+      height: '500px',
+    },
+
+    '@media screen and (max-width:1023px)': {
+      height: '400px',
+    },
+
+    '@media screen and (max-width:768px)': {
+      height: '323px',
+    },
+
+    '@media screen and (max-width:525px)': {
+      height: '230px',
+    },
+  },
 
   '@media screen and (max-width:1439px)': {
     margin: '42px 0',
