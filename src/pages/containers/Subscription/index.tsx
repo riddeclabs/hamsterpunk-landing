@@ -232,5 +232,6 @@ const SubmitButton = styled.button(() => ({
     padding: '16px 0',
     fontSize: '16px',
     lineHeight: '16px',
+    border: `1px solid #FFFFFF`,
   },
 }));

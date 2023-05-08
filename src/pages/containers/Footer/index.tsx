@@ -51,8 +51,8 @@ const CopyBlock = styled.div(() => ({
 
 const Intersect = styled.div(({ theme }) => ({
   position: 'absolute' || theme?.position,
-  left: 0,
-  right: 0,
+  left: '-1px',
+  right: '-1px',
   width: '100%',
   height: '86px',
   background: `url(${intersectBottom})`,
