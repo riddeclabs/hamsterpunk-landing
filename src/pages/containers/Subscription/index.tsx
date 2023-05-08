@@ -47,7 +47,7 @@ export const Subscription = () => {
           />
 
           <SubmitButton type='submit' disabled={state.submitting || !email}>
-            SUBMIT
+            SUBSCRIBE
           </SubmitButton>
         </Form>
       </Content>
