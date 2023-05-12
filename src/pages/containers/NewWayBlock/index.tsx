@@ -32,7 +32,7 @@ export const NewWayBlock = () => {
               </CommonText>
             </CommonTextBlock>
           </div>
-          <NewWayImage alt='new-way' src={newWayImage} />
+          <NewWayImage alt='New Way HamsterPunk' src={newWayImage} />
         </PositionContainer>
       </Content>
     </Wrapper>

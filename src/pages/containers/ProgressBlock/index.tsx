@@ -28,7 +28,7 @@ export const ProgressBlock = () => {
             />
           </Text>
 
-          <ProgressImage alt='progress' src={progressImage} />
+          <ProgressImage alt='Progress in Hamsterville' src={progressImage} />
         </Wrapper>
       </Content>
     </Block>

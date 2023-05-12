@@ -32,7 +32,7 @@ export const Menu = () => {
           {isMobile ? (
             <BurgerButton
               src={burgerIcon}
-              alt='menu'
+              alt='Burger Menu'
               onClick={() => setShowMenu(true)}
             />
           ) : (

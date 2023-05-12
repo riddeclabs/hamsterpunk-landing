@@ -37,11 +37,15 @@ export const GalleryBlock = () => {
       </Text>
 
       <Gallery>
-        <img className='firstHamsterImage' alt='hamster' src={hamster1} />
-        <img alt='hamster' src={hamster2} />
-        <img alt='hamster' src={hamster3} />
-        <img alt='hamster' src={hamster4} />
-        <img alt='hamster' src={hamster5} />
+        <img
+          className='firstHamsterImage'
+          alt='Main HamsterPunk Hero'
+          src={hamster1}
+        />
+        <img alt='Hamster Hero' src={hamster2} />
+        <img alt='Hamster Hero' src={hamster3} />
+        <img alt='Hamster Hero' src={hamster4} />
+        <img alt='Hamster Hero' src={hamster5} />
       </Gallery>
     </Content>
   );

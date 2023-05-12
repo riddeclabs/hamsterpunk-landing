@@ -11,7 +11,7 @@ export const AdvantagesBlock = () => {
   return (
     <Content>
       <Wrapper>
-        <HeadBorder alt='advBorder' src={advBorderImage} />
+        <HeadBorder alt='Splitter' src={advBorderImage} />
         <WrapperItems>
           <AdvantagesItem
             text='Return up to 30% APY on in-game purchases'

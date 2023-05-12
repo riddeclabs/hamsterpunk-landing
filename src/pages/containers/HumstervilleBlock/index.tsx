@@ -27,7 +27,7 @@ export const HumstervilleBlock = () => {
             />
           </Text>
 
-          <ProgressImage alt='progress' src={humstervilleImage} />
+          <ProgressImage alt='Hamsterville' src={humstervilleImage} />
         </Wrapper>
       </Content>
     </Block>

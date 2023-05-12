@@ -8,7 +8,7 @@ import { colors } from '../../constants/variables';
 export const Logo = () => {
   return (
     <LogoWrapper>
-      <LogoStyle alt='' src={logo} />
+      <LogoStyle alt='Logo Hamsterpunk' src={logo} />
       <LogoText>HAMSTERPUNK</LogoText>
     </LogoWrapper>
   );

@@ -19,7 +19,7 @@ export const DrawerMenu: FC<Props> = ({ isActive, setShowMenu }) => {
         <Logo />
         <BurgerButton
           src={burgerIcon}
-          alt='menu'
+          alt='Burger Menu'
           onClick={() => setShowMenu(false)}
         />
       </TopBlock>
