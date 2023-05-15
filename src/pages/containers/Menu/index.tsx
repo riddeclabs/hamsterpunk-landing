@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 import styled from 'styled-components';
 
@@ -15,15 +15,25 @@ export const Menu = () => {
   const isMobile = useMobile();
 
   const [showMenu, setShowMenu] = useState(false);
+
+  const [scroll, setScroll] = useState(0);
+  const onScroll = useCallback(() => setScroll(Math.round(window.scrollY)), []);
+  useEffect(() => {
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [onScroll]);
+
   return (
     <div
       style={{
-        position: 'absolute',
+        position: scroll > 300 ? 'fixed' : 'absolute',
         top: '0',
         left: '0',
         right: '0',
         borderBottom: `1px solid ${colors.menuBorder}`,
         zIndex: 1,
+        background: scroll > 300 ? colors.black : 'none',
       }}
     >
       <Content>
