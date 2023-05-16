@@ -7,15 +7,17 @@ import { colors } from '../../constants/variables';
 type Props = {
   variant: 'title' | 'subtitle' | 'text';
   text: string;
+  id?: string;
 };
 
 export const Typography: FC<Props & React.CSSProperties> = ({
   variant,
   text,
+  id,
   ...customStyles
 }) => {
   return (
-    <Text variant={variant} customStyles={customStyles}>
+    <Text variant={variant} customStyles={customStyles} id={id}>
       {text}
     </Text>
   );

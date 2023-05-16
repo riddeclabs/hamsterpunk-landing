@@ -59,16 +59,20 @@ const Text = styled.div(() => ({
 
 const Block = styled.div(({ theme }) => ({
   width: '100%',
-  marginTop: '110px',
+  // marginTop: '110px',
   paddingBottom: '24px',
   position: 'relative' || theme?.position,
+  paddingTop: '70px',
+  marginTop: '40px',
 
   '@media screen and (max-width:1439px)': {
-    marginTop: '68px',
+    // marginTop: '68px',
+    marginTop: '-2px',
   },
 
   '@media screen and (max-width:768px)': {
-    marginTop: '50px',
+    // marginTop: '50px',
+    marginTop: '-20px',
   },
 }));
 

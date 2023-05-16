@@ -36,21 +36,28 @@ export const FAQBlock = () => {
 };
 
 const Wrapper = styled.div(() => ({
-  marginTop: '110px',
+  // marginTop: '110px',
   paddingBottom: 0,
+  paddingTop: '70px',
+  marginTop: '40px',
 
   '@media screen and (max-width:1439px)': {
-    marginTop: '88px',
+    // marginTop: '88px',
+    marginTop: '18px',
+
     paddingBottom: '68px',
   },
 
   '@media screen and (max-width:1023px)': {
-    marginTop: '68px',
+    // marginTop: '68px',
+    marginTop: '-2px',
+
     paddingBottom: '68px',
   },
 
   '@media screen and (max-width:768px)': {
-    marginTop: '68px',
+    // marginTop: '68px',
+    marginTop: '-2px',
   },
 }));
 

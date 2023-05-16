@@ -7,16 +7,17 @@ import { Typography } from '../../../components/Typography';
 type AdvItemPropsType = {
   text: string;
   title: string;
+  id?: string;
 };
 
-export const AdvantagesItem = ({ text, title }: AdvItemPropsType) => {
+export const AdvantagesItem = ({ text, title, id }: AdvItemPropsType) => {
   return (
     <Wrapper>
       <Title>
         <Typography text={title} variant='subtitle' />
       </Title>
       <Text>
-        <Typography text={text} variant='text' />
+        <Typography text={text} variant='text' id={id} />
       </Text>
     </Wrapper>
   );
