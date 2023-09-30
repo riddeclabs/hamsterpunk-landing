@@ -3,17 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from '@formspree/react';
 import styled from 'styled-components';
 
-import { Content } from '../../../components/Content';
-import { colors } from '../../../constants/variables';
-import { useMobile } from '../../../utils/commonFunctions';
+import {
+  iconAppStore,
+  iconCloud,
+  iconPlayMarket,
+} from '../../../assets/images';
 
 export const Subscription = () => {
   const [state, handleSubmit] = useForm(
     process.env?.REACT_APP_FORM_KEY || 'mayzvzqq'
   );
   const [email, setEmail] = useState('');
-
-  const isMobile = useMobile();
 
   useEffect(() => {
     if (state.succeeded) {
@@ -24,188 +24,139 @@ export const Subscription = () => {
 
   return (
     <Wrapper id='faq'>
-      <Content>
-        <TypographyTitle>Stay Ahead of the Game!</TypographyTitle>
-        <TypographyTitle style={{ marginTop: isMobile ? '12px' : '16px' }}>
-          Subscribe for Exciting Updates and News!
-        </TypographyTitle>
+      <CloudBlock>
+        <CloudImage src={iconCloud} />
+        <Title>Download game app</Title>
+        <DownloadIconsWrapper>
+          <a href='https://test.com'>
+            <img src={iconAppStore} alt='appStoreIcon' />
+          </a>
+          <a href='https://test.com'>
+            <img src={iconPlayMarket} alt='playMarketIcon' />
+          </a>
+        </DownloadIconsWrapper>
+      </CloudBlock>
+      <Text>
+        <TypographyDescription>
+          Remember, the world of gaming never stands still. Subscribe and stay
+          informed.
+        </TypographyDescription>
+      </Text>
+      <Form onSubmit={handleSubmit}>
+        <Input
+          id='email'
+          type='email'
+          name='email'
+          value={email}
+          onChange={(e) => setEmail(e?.target.value)}
+          placeholder='Email Address'
+        />
 
-        <Text>
-          <TypographyDescription>
-            Remember, the world of gaming never stands still. Subscribe and stay
-            informed.
-          </TypographyDescription>
-        </Text>
-        <Form onSubmit={handleSubmit}>
-          <Input
-            id='email'
-            type='email'
-            name='email'
-            value={email}
-            onChange={(e) => setEmail(e?.target.value)}
-            placeholder='Email Address'
-          />
-
-          <SubmitButton type='submit' disabled={state.submitting || !email}>
-            SUBSCRIBE
-          </SubmitButton>
-        </Form>
-      </Content>
+        <SubmitButton type='submit' disabled={state.submitting || !email}>
+          SUBSCRIBE
+        </SubmitButton>
+      </Form>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div(() => ({
-  marginTop: '110px',
-  paddingBottom: '0px',
-  borderBottom: '1px solid rgba(255,255,255,0.2)',
-
-  '@media screen and (max-width:1439px)': {
-    marginTop: '88px',
-  },
-
-  '@media screen and (max-width:1023px)': {
-    marginTop: '68px',
-  },
-
-  '@media screen and (max-width:768px)': {
-    marginTop: '0px',
-  },
+const Wrapper = styled.div(({ theme }) => ({
+  display: 'flex' || theme?.display,
+  flexDirection: 'column',
+  alignItems: 'center',
+  marginTop: '40px',
 }));
 
-const TypographyTitle = styled.p(({ theme }) => ({
-  fontFamily: 'Titan One',
-  fontStyle: 'normal',
-  fontWeight: 400,
-  fontSize: '30px',
-  lineHeight: '34px',
-  letterSpacing: '0.04em',
-  textTransform: 'capitalize' || theme?.transform,
-  color: colors.titles,
+const CloudBlock = styled.div(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  position: 'relative' || theme?.position,
+  width: '836px',
+  height: '504px',
+}));
+
+const CloudImage = styled.img(({ theme }) => ({
+  position: 'absolute' || theme?.position,
+}));
+
+const Title = styled.div(({ theme }) => ({
+  fontFamily: 'Octopus Bold Inline' || theme?.fontFamily,
+  color: 'rgba(167, 76, 71, 1)',
+  fontSize: '64px',
+  fontWeight: '400',
+  lineHeight: '51px',
+  letterSpacing: '0em',
   textAlign: 'center',
+  marginBottom: '40px',
+  position: 'relative',
+  zIndex: 1,
+}));
 
-  '@media screen and (max-width:1439px)': {
-    fontSize: '24px',
-    lineHeight: '26px',
-  },
-
-  '@media screen and (max-width:1023px)': {
-    fontSize: '20px',
-    lineHeight: '22px',
-  },
-
-  '@media screen and (max-width:768px)': {
-    fontSize: '14px',
-    lineHeight: '16px',
-  },
+const DownloadIconsWrapper = styled.div(({ theme }) => ({
+  display: 'flex' || theme?.display,
+  alignItems: 'center',
+  gap: '40px',
+  marginBottom: '130px',
+  position: 'relative',
+  zIndex: 1,
 }));
 
 const Text = styled.div(({ theme }) => ({
-  margin: '24px auto 24px auto',
+  margin: '64px auto 21px auto',
   textAlign: 'center' || theme?.center,
-  width: '598px',
-
-  '@media screen and (max-width:1439px)': {
-    margin: '42px auto 42px auto',
-  },
-
-  '@media screen and (max-width:1023px)': {
-    margin: '32px auto 32px auto',
-  },
-
-  '@media screen and (max-width:768px)': {
-    margin: '16px auto 16px auto',
-    width: '398px',
-    maxWidth: '100%',
-  },
+  width: '458px',
 }));
 
 const TypographyDescription = styled.p(({ theme }) => ({
+  fontFamily: 'Josefin Sans' || theme?.fontFamily,
+  fontSize: '20px',
   fontWeight: 400,
-  fontSize: '24px' || theme?.fontSize,
-  lineHeight: '32px',
-  color: colors.mainText,
+  lineHeight: '26px',
+  letterSpacing: '0px',
   textAlign: 'center',
-  marginTop: '24px',
-
-  '@media screen and (max-width:1439px)': {
-    fontSize: '18px',
-    lineHeight: '22px',
-  },
-
-  '@media screen and (max-width:1023px)': {
-    fontSize: '14px',
-    lineHeight: '28px',
-  },
-
-  '@media screen and (max-width:768px)': {
-    marginTop: '16px',
-    fontSize: '12px',
-    lineHeight: '16px',
-  },
+  color: 'rgba(72, 55, 47, 1)',
 }));
 
 const Form = styled.form(({ theme }) => ({
   display: 'flex' || theme?.display,
   alignItems: 'center',
   justifyContent: 'center',
-  margin: '66px 0',
-  gap: '20px',
-
-  '@media screen and (max-width:1439px)': {
-    margin: '54px 0',
-  },
-
-  '@media screen and (max-width:1023px)': {
-    margin: '44px 0',
-  },
-
-  '@media screen and (max-width:768px)': {
-    flexDirection: 'column',
-    margin: '34px 0',
-  },
+  margin: '0px 0 109px 0',
+  gap: '40px',
 }));
 
 const Input = styled.input(() => ({
-  width: '519px',
-  height: '55px',
-  padding: '16px 30px',
-  background: '#F4E5C2',
-  fontFamily: 'Josefin Sans',
-  fontSize: '26px',
-  lineHeight: '35px',
-  fontWeight: 400,
+  width: '298px',
+  height: '40px',
+  padding: '8px 12px',
   outline: 'none',
 
-  '@media screen and (max-width:1439px)': {
-    fontSize: '20px',
-    lineHeight: '30px',
-  },
+  fontFamily: 'Octopus Bold Inline',
+  fontSize: '18px',
+  fontWeight: 400,
+  lineHeight: '18px',
+  letterSpacing: '0em',
 
-  '@media screen and (max-width:1023x)': {
-    fontSize: '16px',
-    lineHeight: '20px',
-  },
-
-  '@media screen and (max-width:768px)': {
-    maxWidth: '100%',
-    fontSize: '16px',
-    lineHeight: '16px',
-    width: '100%',
-    height: '42px',
-  },
+  borderRadius: '4px',
+  border: '1px solid #F2D59B',
+  background: '#F6E8CD',
 }));
 
 const SubmitButton = styled.button(() => ({
   cursor: 'pointer',
-  padding: '18px 40px',
-  background: '#F09D51',
-  border: `2px solid #FFFFFF`,
-  color: colors.black,
-  fontSize: '24px',
-  lineHeight: '24px',
-  fontWeight: 600,
-  height: '55px',
+  padding: '9px 19px',
+
+  borderRadius: '4px',
+  background: '#A74C47',
+  border: `1px solid #A74C47`,
+  color: '#fff',
+
+  fontFamily: 'Octopus Bold Inline',
+  fontSize: '18px',
+  fontWeight: 400,
+  height: '40px',
 
   '&:hover:not(:disabled)': {
     filter: 'brightness(1.2)',
