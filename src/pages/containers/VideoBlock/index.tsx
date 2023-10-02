@@ -19,6 +19,8 @@ export const VideoBlock = () => {
           reveal trailer.
         </Description>
         <Trailer>
+          <ImgWrapper> </ImgWrapper>
+
           <CloudLeft src={trailerCloudLeft} />
           <Island src={trailerLand} />
           <CloudRight src={trailerCloudRight} />
@@ -36,6 +38,14 @@ const Wrapper = styled.div(() => ({
   justifyContent: 'center',
   alignItems: 'center',
   padding: '40px 0 410px 0',
+
+  '@media screen and (max-width:1130px)': {
+    padding: '0 10% 275px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    padding: '32px 20px 215px 20px',
+  },
 }));
 
 const Content = styled.div(({ theme }) => ({
@@ -53,6 +63,11 @@ const Title = styled.div(({ theme }) => ({
   lineHeight: '51px',
   textAlign: 'center',
   color: 'rgba(167, 76, 71, 1)',
+
+  '@media screen and (max-width:768px)': {
+    fontSize: '40px',
+    lineHeight: '32px',
+  },
 }));
 
 const Description = styled.div(({ theme }) => ({
@@ -63,14 +78,41 @@ const Description = styled.div(({ theme }) => ({
   textAlign: 'center',
   margin: '20px 0 55px 0',
   color: 'rgba(72, 55, 47, 1)',
+
+  '@media screen and (max-width:1130px)': {
+    margin: '12px 0 56px 0',
+  },
+
+  '@media screen and (max-width:768px)': {
+    fontSize: '16px',
+    lineHeight: '21px',
+  },
 }));
 
 const Trailer = styled.div(({ theme }) => ({
   maxWidth: '872px',
-  background: 'rgba(167, 76, 71, 0.16)',
+  width: '872px',
   padding: '22px',
   borderRadius: '32px',
   position: 'relative' || theme?.position,
+
+  '@media screen and (max-width:1130px)': {
+    width: '500px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    width: '280px',
+  },
+}));
+
+const ImgWrapper = styled.div(({ theme }) => ({
+  maxWidth: '872px',
+  background: 'rgba(167, 76, 71, 0.16)',
+  padding: '22px',
+  borderRadius: '32px',
+  position: 'absolute' || theme?.position,
+  inset: '0px',
+  zIndex: 1,
 }));
 
 const Slide = styled.img(({ theme }) => ({
@@ -83,16 +125,46 @@ const CloudLeft = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
   left: '-350px',
   top: '-50px',
+
+  '@media screen and (max-width:1130px)': {
+    width: '258px',
+    top: '-180px',
+    left: '-180px',
+  },
 }));
 
 const CloudRight = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
   right: '-76%',
   top: '426px',
+
+  '@media screen and (max-width:1130px)': {
+    maxWidth: '299px',
+    top: 'auto',
+    bottom: '-170px',
+    right: '-150px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    bottom: '-136px',
+    right: '-155px',
+  },
 }));
 
 const Island = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
   left: '-320px',
   top: '220px',
+
+  '@media screen and (max-width:1130px)': {
+    maxWidth: '768px',
+    top: '78px',
+    left: '-138px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    maxWidth: '470px',
+    top: '61px',
+    left: '-95px',
+  },
 }));

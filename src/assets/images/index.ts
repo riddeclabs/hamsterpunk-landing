@@ -6,6 +6,7 @@ import advantageCloud2 from './advantage_cloud2.svg';
 import advBorderImage from './advBorderImage.svg';
 import androidIcon from './android.svg';
 import iosIcon from './apple.svg';
+import appStore from './appStore.svg';
 import arrow from './arrow.svg';
 import burgerIcon from './burger.svg';
 import crossImage from './crossImage.svg';
@@ -30,19 +31,24 @@ import idleCloud1 from './idle_cloud_1.svg';
 import idleCloud2 from './idle_cloud_2.svg';
 import idleDirigibleBig from './idle_dirigible_big.png';
 import idleDirigibleSmall from './idle_dirigible_small.png';
+import instagrammIcon from './insta.svg';
 import intersect from './intersect.svg';
 import intersectBottom from './intersectBottom.svg';
-import logo from './logo.svg';
+import logo from './logo.png';
 import mainImage from './main.jpg';
+import mainBg from './mainBg.png';
 import newWayImage from './newWayImage.png';
 import orangeBg from './organgeBg.png';
+import playMarket from './playMarket.svg';
 import progressImage from './progressImage.png';
 import riddec from './riddec.svg';
 import riddecMobile from './riddecMobile.svg';
+import tiktokIcon from './tiktok.svg';
 import trailer1 from './trailer1.png';
 import trailerCloudLeft from './trailer_cloud_left.svg';
 import trailerCloudRight from './trailer_cloud_right.svg';
 import trailerLand from './trailer_land.png';
+import youtubeIcon from './youtube.svg';
 
 export {
   mainImage,
@@ -51,7 +57,6 @@ export {
   androidIcon,
   iosIcon,
   riddec,
-  logo,
   newWayImage,
   crossImage,
   humstervilleImage,
@@ -90,6 +95,14 @@ export {
   iconAppStore,
   iconPlayMarket,
   iconCloud,
+  //newImages
+  logo,
+  instagrammIcon,
+  tiktokIcon,
+  youtubeIcon,
+  playMarket,
+  appStore,
+  mainBg,
 };
 
 export { ReactComponent as HamsterPunkText } from './hamsterpunkText.svg';

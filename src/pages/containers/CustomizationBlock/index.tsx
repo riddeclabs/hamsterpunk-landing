@@ -48,19 +48,37 @@ const Wrapper = styled.div(() => ({
   justifyContent: 'center',
   alignItems: 'center',
   padding: '22px 0',
+
+  '@media screen and (max-width:1130px)': {
+    padding: '32px 20px 85px 20px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    padding: '32px 20px 48px 20px',
+  },
 }));
 
-const Content = styled.div(() => ({
+const Content = styled.div(({ theme }) => ({
   maxWidth: '1280px',
   margin: '0 auto',
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'flex-start',
+
+  '@media screen and (max-width:768px)': {
+    flexDirection: 'column' || theme?.flexDirection,
+    alignItems: 'flex-start',
+    width: '100%',
+  },
 }));
 
 const LeftDirigibleWrapper = styled.div(({ theme }) => ({
   position: 'relative' || theme?.position,
   marginTop: '175px',
+
+  '@media screen and (max-width:1130px)': {
+    display: 'none',
+  },
 }));
 
 const LeftDirigible = styled.img(({ theme }) => ({
@@ -78,6 +96,14 @@ const TextWrapper = styled.div(({ theme }) => ({
   position: 'relative' || theme?.position,
   maxWidth: '430px',
   margin: '302px 0px 0px 80px' || theme?.margin,
+
+  '@media screen and (max-width:1130px)': {
+    margin: 0,
+  },
+
+  '@media screen and (max-width:768px)': {
+    maxWidth: '335px',
+  },
 }));
 
 const Title = styled.div(({ theme }) => ({
@@ -88,6 +114,11 @@ const Title = styled.div(({ theme }) => ({
   letterSpacing: '0em',
   textAlign: 'left',
   color: 'rgba(167, 76, 71, 1)',
+
+  '@media screen and (max-width:768px)': {
+    fontSize: '40px',
+    lineHeight: '32px',
+  },
 }));
 
 const Description = styled.div(({ theme }) => ({
@@ -100,6 +131,12 @@ const Description = styled.div(({ theme }) => ({
   position: 'relative',
   zIndex: 1,
   marginTop: '24px',
+
+  '@media screen and (max-width:768px)': {
+    fontSize: '16px',
+    lineHeight: '21px',
+    marginTop: '12px',
+  },
 }));
 
 const RightCloud = styled.img(({ theme }) => ({
@@ -107,14 +144,29 @@ const RightCloud = styled.img(({ theme }) => ({
   bottom: '150px',
   right: '-320px',
   zIndex: 0,
+
+  '@media screen and (max-width:768px)': {
+    right: 'auto',
+    width: '239px',
+    left: '-130px',
+    bottom: '116px',
+  },
 }));
 
 const RightDirigibleWrapper = styled.div(({ theme }) => ({
   marginTop: '30px',
   position: 'relative' || theme?.position,
+
+  '@media screen and (max-width:768px)': {
+    alignSelf: 'flex-end',
+  },
 }));
 
 const RightDirigible = styled.img(({ theme }) => ({
   position: 'relative' || theme?.position,
   zIndex: 1,
+
+  '@media screen and (max-width:1130px)': {
+    width: '242px',
+  },
 }));

@@ -26,7 +26,7 @@ export const FarmingBlock = () => {
             </Description>
           </TextBlock>
 
-          <TextBlock>
+          <TextBlock className='mobileHide'>
             <LeftCloud src={farmingCloudLeft} />
 
             <Title>Lazy hamsters and Managers</Title>
@@ -52,21 +52,38 @@ const Wrapper = styled.div(() => ({
   justifyContent: 'center',
   alignItems: 'center',
   padding: '0 0 27px 0',
+
+  '@media screen and (max-width:1130px)': {
+    padding: '32px 20px 85px 20px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    padding: '32px 20px 48px 20px',
+  },
 }));
 
-const Content = styled.div(() => ({
+const Content = styled.div(({ theme }) => ({
   maxWidth: '1280px',
   margin: '0 auto',
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'flex-start',
   gap: '40px',
+
+  '@media screen and (max-width:768px)': {
+    flexDirection: 'column' || theme?.flexDirection,
+    gap: '32px',
+  },
 }));
 
 const BigDirigible = styled.img(({ theme }) => ({
   marginBottom: '54px',
   position: 'relative' || theme?.position,
   zIndex: 1,
+
+  '@media screen and (max-width:1130px)': {
+    display: 'none',
+  },
 }));
 
 const TextBlockWrapper = styled.div(({ theme }) => ({
@@ -75,6 +92,16 @@ const TextBlockWrapper = styled.div(({ theme }) => ({
   alignItems: 'flex-start',
   gap: '108px',
   marginTop: '146px',
+
+  '@media screen and (max-width:1130px)': {
+    marginTop: 0,
+  },
+
+  '@media screen and (max-width:768px)': {
+    '& .mobileHide': {
+      display: 'none',
+    },
+  },
 }));
 
 const TextBlock = styled.div(({ theme }) => ({
@@ -92,6 +119,11 @@ const Title = styled.div(({ theme }) => ({
   color: 'rgba(167, 76, 71, 1)',
   position: 'relative',
   zIndex: 1,
+
+  '@media screen and (max-width:768px)': {
+    fontSize: '40px',
+    lineHeight: '32px',
+  },
 }));
 
 const Description = styled.div(({ theme }) => ({
@@ -105,6 +137,12 @@ const Description = styled.div(({ theme }) => ({
   color: 'rgba(72, 55, 47, 1)',
   position: 'relative',
   zIndex: 1,
+
+  '@media screen and (max-width:768px)': {
+    fontSize: '16px',
+    lineHeight: '21px',
+    marginTop: '12px',
+  },
 }));
 
 const SmallDirigibleWrapper = styled.div(({ theme }) => ({
@@ -112,7 +150,11 @@ const SmallDirigibleWrapper = styled.div(({ theme }) => ({
   alignSelf: 'flex-end',
 }));
 
-const SmallDirigible = styled.img(() => ({}));
+const SmallDirigible = styled.img(() => ({
+  '@media screen and (max-width:768px)': {
+    width: '196px',
+  },
+}));
 
 const LeftCloud = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
@@ -124,4 +166,15 @@ const RightCloud = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
   top: '-246px',
   right: '-246px',
+
+  '@media screen and (max-width:1130px)': {
+    display: 'none',
+  },
+
+  '@media screen and (max-width:768px)': {
+    display: 'block',
+    width: '262px',
+    top: '-160px',
+    right: '-160px',
+  },
 }));

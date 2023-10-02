@@ -65,6 +65,10 @@ const Wrapper = styled.div(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   marginTop: '40px',
+
+  '@media screen and (max-width:1130px)': {
+    margin: 0,
+  },
 }));
 
 const CloudBlock = styled.div(({ theme }) => ({
@@ -75,10 +79,25 @@ const CloudBlock = styled.div(({ theme }) => ({
   position: 'relative' || theme?.position,
   width: '836px',
   height: '504px',
+
+  '@media screen and (max-width:1130px)': {
+    width: '668px',
+    height: '402px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    width: '335px',
+    height: '202px',
+    marginBottom: '48px',
+  },
 }));
 
 const CloudImage = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
+
+  '@media screen and (max-width:1130px)': {
+    width: '100%',
+  },
 }));
 
 const Title = styled.div(({ theme }) => ({
@@ -92,6 +111,17 @@ const Title = styled.div(({ theme }) => ({
   marginBottom: '40px',
   position: 'relative',
   zIndex: 1,
+
+  '@media screen and (max-width:1130px)': {
+    fontSize: '48px',
+    lineHeight: '32px',
+    marginBottom: '20px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    fontSize: '40px',
+    maxWidth: '200px',
+  },
 }));
 
 const DownloadIconsWrapper = styled.div(({ theme }) => ({
@@ -101,12 +131,33 @@ const DownloadIconsWrapper = styled.div(({ theme }) => ({
   marginBottom: '130px',
   position: 'relative',
   zIndex: 1,
+
+  '@media screen and (max-width:1130px)': {
+    marginBottom: '96px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    marginBottom: '-54px',
+    marginTop: '48px',
+    gap: '24px',
+
+    '& img': {
+      width: '118px',
+    },
+  },
 }));
 
 const Text = styled.div(({ theme }) => ({
   margin: '64px auto 21px auto',
   textAlign: 'center' || theme?.center,
   width: '458px',
+
+  '@media screen and (max-width:768px)': {
+    margin: '48px auto 24px auto',
+    width: '100%',
+    maxWidth: '100%',
+    padding: '0 20px',
+  },
 }));
 
 const TypographyDescription = styled.p(({ theme }) => ({
@@ -125,6 +176,14 @@ const Form = styled.form(({ theme }) => ({
   justifyContent: 'center',
   margin: '0px 0 109px 0',
   gap: '40px',
+
+  '@media screen and (max-width:768px)': {
+    flexDirection: 'column',
+    gap: '20px',
+    alignItems: 'flex-start',
+    width: '100%',
+    padding: '0px 20px',
+  },
 }));
 
 const Input = styled.input(() => ({
@@ -178,9 +237,9 @@ const SubmitButton = styled.button(() => ({
   },
 
   '@media screen and (max-width:768px)': {
-    width: '100%',
+    width: 'auto',
     height: '42px',
-    padding: '16px 0',
+    padding: '11px 19px',
     fontSize: '16px',
     lineHeight: '16px',
     border: `1px solid #FFFFFF`,

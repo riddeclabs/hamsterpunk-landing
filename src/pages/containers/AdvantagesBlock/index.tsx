@@ -64,6 +64,10 @@ const Wrapper = styled.div(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+
+  '@media screen and (max-width:1130px)': {
+    padding: '48px 20px',
+  },
 }));
 
 const Content = styled.div(({ theme }) => ({
@@ -72,6 +76,16 @@ const Content = styled.div(({ theme }) => ({
   alignItems: 'flex-start',
   gap: '100px',
   maxWidth: '1280px',
+
+  '@media screen and (max-width:1130px)': {
+    gap: '48px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
 }));
 
 const AdvantageItem = styled.div(({ theme }) => ({
@@ -80,6 +94,12 @@ const AdvantageItem = styled.div(({ theme }) => ({
   alignItems: 'flex-start',
   flexDirection: 'column',
   position: 'relative',
+
+  '@media screen and (max-width:768px)': {
+    maxWidth: '335px',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
 }));
 
 const Title = styled.div(({ theme }) => ({
@@ -91,6 +111,15 @@ const Title = styled.div(({ theme }) => ({
   color: 'rgba(167, 76, 71, 1)',
   zIndex: 1,
   position: 'relative',
+
+  '@media screen and (max-width:1130px)': {
+    fontSize: '38px',
+    lineHeight: '32px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    textAlign: 'center',
+  },
 }));
 
 const Description = styled.div(({ theme }) => ({
@@ -103,10 +132,24 @@ const Description = styled.div(({ theme }) => ({
   margin: '20px 0 40px 0',
   zIndex: 1,
   position: 'relative',
+
+  '@media screen and (max-width:1130px)': {
+    fontSize: '15px',
+    lineHeight: '21px',
+    margin: '12px 0 0 0',
+  },
+
+  '@media screen and (max-width:768px)': {
+    textAlign: 'center',
+  },
 }));
 
 const Image = styled.img(({ theme }) => ({
   margin: '0 auto' || theme?.margin,
+
+  '@media screen and (max-width:1130px)': {
+    width: '156px',
+  },
 }));
 
 const LeftCloud = styled.img(({ theme }) => ({
@@ -114,6 +157,13 @@ const LeftCloud = styled.img(({ theme }) => ({
   zIndex: 0,
   left: '-200px',
   top: '-134px',
+
+  '@media screen and (max-width:768px)': {
+    width: '227px',
+    left: '-120px',
+    top: 'auto',
+    bottom: '-120px',
+  },
 }));
 
 const RightCloud = styled.img(({ theme }) => ({
@@ -121,4 +171,10 @@ const RightCloud = styled.img(({ theme }) => ({
   zIndex: 0,
   right: '-175px',
   top: '120px',
+
+  '@media screen and (max-width:768px)': {
+    width: '251px',
+    right: '-120px',
+    top: '-108px',
+  },
 }));
