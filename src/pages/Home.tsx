@@ -3,18 +3,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { AdvantagesBlock } from './containers/AdvantagesBlock';
-import { FAQBlock } from './containers/FAQBlock';
+import { CustomizationBlock } from './containers/CustomizationBlock';
+import { FarmingBlock } from './containers/FarmingBlock';
 import { Footer } from './containers/Footer';
-import { GalleryBlock } from './containers/GalleryBlock';
-import { HumstervilleBlock } from './containers/HumstervilleBlock';
 import { MainBlock } from './containers/MainBlock';
-import { Menu } from './containers/Menu';
 import { NewWayBlock } from './containers/NewWayBlock';
-import { ProgressBlock } from './containers/ProgressBlock';
 import { VideoBlock } from './containers/VideoBlock';
-
-import { orangeBg } from '../assets/images';
-import { colors } from '../constants/variables';
 
 export const HomePage = () => {
   return (
@@ -45,17 +39,13 @@ export const HomePage = () => {
           Explore and attach lands to make Hamsterville flourish.
         </h6>
       </HiddenSeoText>
-      <Menu />
+
       <MainBlock />
       <NewWayBlock />
       <AdvantagesBlock />
+      <FarmingBlock />
       <VideoBlock />
-      <OrangeBackgroundWrapper>
-        <GalleryBlock />
-        <ProgressBlock />
-        <HumstervilleBlock />
-        <FAQBlock />
-      </OrangeBackgroundWrapper>
+      <CustomizationBlock />
       <Footer />
     </Wrapper>
   );
@@ -63,13 +53,8 @@ export const HomePage = () => {
 
 const Wrapper = styled.div(({ theme }) => ({
   width: '100%',
-  background: colors.grayBackground,
+  backgroundColor: 'rgba(155, 217, 237, 1)',
   overflowX: 'hidden' || theme?.overflow,
-}));
-
-const OrangeBackgroundWrapper = styled.div(() => ({
-  width: '100%',
-  background: `url(${orangeBg})`,
 }));
 
 const HiddenSeoText = styled.div(({ theme }) => ({

@@ -7,6 +7,7 @@ export const colors = {
   white: '#FFFFFF',
   menuBorder: 'rgba(255, 255, 255, 0.2)',
   lightOrange: '#F4E5C2',
+  blueBackground: '#9bd9ed',
 };
 
 export const questions = [

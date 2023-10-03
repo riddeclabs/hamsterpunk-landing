@@ -3,136 +3,181 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
-  HamsterPunkText,
-  // RiddecCreated,
-  RiddecCreatedMobile,
-  androidIcon,
-  intersect,
-  iosIcon,
-  mainImage,
+  appStore,
+  instagrammIcon,
+  logo,
+  mainBg,
+  playMarket,
+  tiktokIcon,
+  youtubeIcon,
 } from '../../../assets/images';
-import { colors } from '../../../constants/variables';
-// import { useMobile } from '../../../utils/commonFunctions';
 
 export const MainBlock = () => {
-  // const isMobile = useMobile();
   return (
     <Wrapper>
-      <TextBlock>
-        <HamsterPunkTextStyled />
-        <h2>Play to earn idle game that teaches crypto</h2>
-      </TextBlock>
-      <BottomBlock>
-        <DevelopersBlock>
-          <AppIcons>
-            <img alt='android app' src={androidIcon} />
-            <img alt='ios app' src={iosIcon} />
-          </AppIcons>
+      <BGWrapper>
+        {/* <BackgroundImage src={mainBg} alt='Background Image' /> */}
+      </BGWrapper>
+      <SocialBlock>
+        <a
+          href='https://www.youtube.com/channel/UCv2Je1vQ_C-f1Sgp4bna9FA'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img src={youtubeIcon} alt='Youtube' />
+        </a>
+        <a
+          href='https://www.instagram.com/hamsterpunkgame/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img src={instagrammIcon} alt='Instagramm' />
+        </a>
 
-          {/* {isMobile ? <RiddecCreatedMobile /> : <RiddecCreated />} */}
-          <a href='https://www.riddec.com/' target='_blank' rel='noreferrer'>
-            <RiddecCreatedMobile style={{ cursor: 'pointer' }} />
-          </a>
-        </DevelopersBlock>
-        <Intersect />
-      </BottomBlock>
+        <a
+          href='https://www.tiktok.com/@hamsterpunkgame'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img src={tiktokIcon} alt='TikTok' />
+        </a>
+      </SocialBlock>
+      <CentralBlock>
+        <Logo src={logo} alt='Logo' />
+        <Text>Relaxing farm game</Text>
+        <MobileAppWrapper>
+          <img src={appStore} alt='app store icon' />
+          <img src={playMarket} alt='play market icon' />
+        </MobileAppWrapper>
+      </CentralBlock>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div(({ theme }) => ({
   width: '100%' || theme?.width,
-  height: '100vh',
-  background: `url(${mainImage})`,
-  backgroundSize: 'cover',
-  position: 'relative',
+  height: '100dvh',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'flex-start',
 
-  '@media screen and (max-width:1439px)': {
-    backgroundPosition: 'center',
-  },
-
-  '@media screen and (max-width:768px)': {
-    height: '580px',
-    backgroundPosition: 'center',
+  '@media screen and (max-width:1130px)': {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    position: 'relative',
+    zIndex: 1,
   },
 }));
 
-const TextBlock = styled.div(({ theme }) => ({
-  width: '100%' || theme?.width,
-  height: '100%',
+const SocialBlock = styled.div(({ theme }) => ({
+  position: 'absolute' || theme?.position,
+  left: '80px',
+  top: '98px',
   display: 'flex',
+  alignItems: 'center',
+  gap: '24px',
+
+  '@media screen and (max-width:1130px)': {
+    position: 'relative',
+    left: 'auto',
+    top: 'auto',
+    marginTop: '64px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    '& img': {
+      width: '40px',
+    },
+  },
+}));
+
+const CentralBlock = styled.div(({ theme }) => ({
+  display: 'flex' || theme?.display,
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'center',
+  maxWidth: '400px',
+  marginTop: '81px',
+  position: 'relative',
 
-  '& >h2': {
-    fontSize: '24px',
-    lineHeight: '24px',
-    fontWeight: 700,
-    color: colors.white,
-    marginTop: '10px',
-    textTransform: 'uppercase',
-    textAlign: 'center',
-    maxWidth: '90%',
-
-    '@media screen and (max-width:768px)': {
-      fontSize: '16px',
-      lineHeight: '16px',
-      marginTop: '-20px',
-    },
-
-    '@media screen and (max-width:600px)': {
-      fontSize: '8px',
-      lineHeight: '8px',
-      marginTop: '-40px',
-    },
+  '@media screen and (max-width:1130px)': {
+    position: 'relative',
+    left: 'auto',
+    top: 'auto',
+    marginTop: '20px',
   },
-}));
-
-const BottomBlock = styled.div(({ theme }) => ({
-  position: 'absolute' || theme?.position,
-  bottom: '-2px',
-  left: 0,
-  right: 0,
-}));
-
-const Intersect = styled.div(() => ({
-  width: '100%',
-  height: '86px',
-  background: `url(${intersect})`,
-  backgroundSize: 'cover',
-}));
-
-const HamsterPunkTextStyled = styled(HamsterPunkText)(() => ({
-  maxWidth: '90%',
 
   '@media screen and (max-width:768px)': {
-    marginTop: '-100px',
+    maxWidth: '286px',
   },
 }));
 
-const DevelopersBlock = styled.div(() => ({
-  maxWidth: '1312px',
-  margin: '0 auto',
-  display: 'flex',
-  justifyContent: 'space-between',
-  marginBottom: '57px',
+const Logo = styled.img(({ theme }) => ({
+  maxWidth: '100%' || theme?.maxWidth,
+}));
 
-  '@media screen and (max-width:1439px)': {
-    maxWidth: '90%',
+const Text = styled.p(({ theme }) => ({
+  fontFamily: 'Octopus Bold Inline',
+  fontSize: '64px' || theme?.fontSize,
+  fontWeight: 400,
+  lineHeight: '52px',
+  color: '#A74C47',
+  margin: '12px 0 32px 0',
+  textAlign: 'center',
+
+  '@media screen and (max-width:1130px)': {
+    margin: '0px 0 109px 0',
+  },
+
+  '@media screen and (max-width:768px)': {
+    fontSize: '40px',
+    lineHeight: '32px',
+    maxWidth: '202px',
   },
 }));
 
-const AppIcons = styled.div(() => ({
-  display: 'flex',
+const MobileAppWrapper = styled.div(({ theme }) => ({
+  display: 'flex' || theme?.display,
+  width: '100%',
   alignItems: 'center',
-  gap: '4px',
+  gap: '40px',
+  justifyContent: 'center',
 
-  '>img': {
-    cursor: 'pointer',
-
-    '@media screen and (max-width:768px)': {
-      width: '24px',
+  '@media screen and (max-width:768px)': {
+    gap: '24px',
+    '& > img': {
+      width: '118px',
     },
   },
 }));
+
+const BGWrapper = styled.div(({ theme }) => ({
+  position: 'absolute' || theme?.position,
+  left: 0,
+  top: 0,
+  zIndex: 0,
+  width: '100%',
+  height: '1404px',
+  background: `url(${mainBg})`,
+  backgroundPosition: 'center -504px',
+  backgroundRepeat: 'no-repeat',
+  // position: 'absolute' || theme?.position,
+  // display: 'flex',
+  // justifyContent: 'center',
+  // alignItems: 'center',
+  // inset: '-318px -318px -504px -254px',
+
+  '@media screen and (max-width:1130px)': {
+    backgroundPosition: 'center',
+    maxHeight: '100%',
+    height: '100%',
+  },
+}));
+
+// const BackgroundImage = styled.img(() => ({
+//   // zIndex: 0,
+//   // width: '1948px',
+//   // height: '1722px',
+//   // top: '-318px',
+//   // left: '-254px',
+// }));

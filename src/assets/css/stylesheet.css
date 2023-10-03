@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Octopus Bold Inline';
+  src: url('../fonts/OctopusBoldInline.woff2') format('woff2'),
+    url('../fonts/OctopusBoldInline.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

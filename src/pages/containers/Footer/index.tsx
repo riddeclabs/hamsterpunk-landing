@@ -3,50 +3,33 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { intersectBottom } from '../../../assets/images';
-import { Content } from '../../../components/Content';
-import { Logo } from '../../../components/Logo';
-import { colors } from '../../../constants/variables';
 import { Subscription } from '../Subscription';
 
 export const Footer = () => {
   return (
-    <Block>
+    <Wrapper>
       <Content>
         <Subscription />
-        <Wrapper>
-          <Logo />
-          <CopyBlock>2023 Riddec. All rights reserved</CopyBlock>
-        </Wrapper>
+
+        <Intersect />
       </Content>
-      <Intersect />
-    </Block>
+    </Wrapper>
   );
 };
 
 const Wrapper = styled.div(({ theme }) => ({
+  width: '100%' || theme?.width,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}));
+
+const Content = styled.div(({ theme }) => ({
   display: 'flex' || theme?.display,
   justifyContent: 'space-between',
-  alignItems: 'center',
-  paddingBottom: '66px',
-  marginTop: '36px',
-
-  '@media screen and (max-width:768px)': {
-    paddingBottom: '40px',
-    flexDirection: 'column',
-  },
-}));
-
-const Block = styled.div(({ theme }) => ({
-  position: 'relative' || theme?.relative,
-}));
-
-const CopyBlock = styled.div(() => ({
-  color: colors.white,
-  fontWeight: 400,
-  opacity: '0.4',
-  '@media screen and (max-width:768px)': {
-    marginTop: '15px',
-  },
+  alignItems: 'flex-start',
+  gap: '100px',
+  maxWidth: '1280px',
 }));
 
 const Intersect = styled.div(({ theme }) => ({

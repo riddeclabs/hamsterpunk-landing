@@ -163,4 +163,6 @@ code {
 html,
 body {
   scroll-behavior: smooth;
+  overflow: hidden;
+  overflow-y: visible;
 }

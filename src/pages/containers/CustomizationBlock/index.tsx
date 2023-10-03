@@ -3,51 +3,58 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
-  idleCloud1,
-  idleCloud2,
-  idleDirigibleBig,
-  idleDirigibleSmall,
+  customizationCloudLeft,
+  customizationCloudRight,
+  customizationDirigibleLeft,
+  customizationDirigibleRight,
 } from '../../../assets/images';
 
-export const NewWayBlock = () => {
+export const CustomizationBlock = () => {
   return (
     <Wrapper>
       <Content>
         <LeftDirigibleWrapper>
-          <LeftDirigible src={idleDirigibleSmall} alt='Left Dirible Idle' />
-          <LeftCloud src={idleCloud1} alt='Idle Cloud 1' />
+          <LeftDirigible
+            src={customizationDirigibleLeft}
+            alt='Left Dirible Idle'
+          />
+          <LeftCloud src={customizationCloudLeft} alt='Idle Cloud 1' />
         </LeftDirigibleWrapper>
-        <LeftCloudMobile src={idleCloud1} alt='Idle Cloud 1' />
-
         <TextWrapper>
-          <Title>Idle in the skies!</Title>
-          <DescriptionWrapper>
-            <Description>
-              Hamsterpunk is an ultimate idle farming game with cute and curious
-              hamsters to command, manifold structures to build, upgrades to
-              unlock and rewards to get. Build your settlement cozy and cute and
-              make it thrive across infinite flying islands in this
-              steampunk-styled adventure.
-            </Description>
-            <DescriptionCloud alt='Idle Cloud 2' src={idleCloud2} />
-          </DescriptionWrapper>
+          <Title>Settlement customisation</Title>
+          <Description>
+            Expand your settlement using a Grappling Hook to catch new islands
+            and build bridges to them. Decorate the streets of your town with
+            various items, from whimsical steampunk contraptions to charming
+            natural wonders, allowing you to create a unique and personalised
+            hamster haven.
+          </Description>
         </TextWrapper>
-        <RightDirigible src={idleDirigibleBig} alt='Right Dirigible Idle' />
+        <RightDirigibleWrapper>
+          <RightDirigible
+            src={customizationDirigibleRight}
+            alt='Right Dirigible Idle'
+          />
+          <RightCloud src={customizationCloudRight} alt='Idle Cloud 1' />
+        </RightDirigibleWrapper>
       </Content>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div(({ theme }) => ({
+const Wrapper = styled.div(() => ({
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '38px 0',
-  position: 'relative' || theme?.position,
+  padding: '22px 0',
 
   '@media screen and (max-width:1130px)': {
-    padding: '32px 20px',
+    padding: '32px 20px 85px 20px',
+  },
+
+  '@media screen and (max-width:768px)': {
+    padding: '32px 20px 48px 20px',
   },
 }));
 
@@ -56,21 +63,18 @@ const Content = styled.div(({ theme }) => ({
   margin: '0 auto',
   display: 'flex',
   justifyContent: 'flex-start',
-  alignItems: 'flex-end',
-
-  '@media screen and (max-width:1130px)': {
-    alignItems: 'flex-start',
-  },
+  alignItems: 'flex-start',
 
   '@media screen and (max-width:768px)': {
     flexDirection: 'column' || theme?.flexDirection,
+    alignItems: 'flex-start',
     width: '100%',
   },
 }));
 
 const LeftDirigibleWrapper = styled.div(({ theme }) => ({
   position: 'relative' || theme?.position,
-  marginBottom: '60px',
+  marginTop: '175px',
 
   '@media screen and (max-width:1130px)': {
     display: 'none',
@@ -82,31 +86,23 @@ const LeftDirigible = styled.img(({ theme }) => ({
   zIndex: 1,
 }));
 
-const LeftCloudMobile = styled.img(({ theme }) => ({
-  display: 'none',
-
-  '@media screen and (max-width:1130px)': {
-    position: 'absolute' || theme?.position,
-    left: '-30px',
-    top: '-130px',
-    display: 'block',
-    width: '405px',
-  },
-}));
-
 const LeftCloud = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
-  left: '-400px',
-  top: '-200px',
+  left: '-260px',
+  top: '-154px',
 }));
 
 const TextWrapper = styled.div(({ theme }) => ({
   position: 'relative' || theme?.position,
-  maxWidth: '459px',
-  margin: '0 78px 210px 122px' || theme?.margin,
+  maxWidth: '430px',
+  margin: '302px 0px 0px 80px' || theme?.margin,
 
   '@media screen and (max-width:1130px)': {
     margin: 0,
+  },
+
+  '@media screen and (max-width:768px)': {
+    maxWidth: '335px',
   },
 }));
 
@@ -125,14 +121,6 @@ const Title = styled.div(({ theme }) => ({
   },
 }));
 
-const DescriptionWrapper = styled.div(() => ({
-  marginTop: '24px',
-
-  '@media screen and (max-width:768px)': {
-    marginTop: '12px',
-  },
-}));
-
 const Description = styled.div(({ theme }) => ({
   fontFamily: 'Josefin Sans' || theme?.fontFamily,
   fontSize: '20px',
@@ -142,38 +130,43 @@ const Description = styled.div(({ theme }) => ({
   textAlign: 'left',
   position: 'relative',
   zIndex: 1,
+  marginTop: '24px',
 
   '@media screen and (max-width:768px)': {
     fontSize: '16px',
     lineHeight: '21px',
+    marginTop: '12px',
   },
 }));
 
-const DescriptionCloud = styled.img(({ theme }) => ({
+const RightCloud = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
-  bottom: '-100px',
-  right: 0,
+  bottom: '150px',
+  right: '-320px',
   zIndex: 0,
 
-  '@media screen and (max-width:1130px)': {
-    width: '177px',
-    left: 0,
-    top: '220px',
+  '@media screen and (max-width:768px)': {
+    right: 'auto',
+    width: '239px',
+    left: '-130px',
+    bottom: '116px',
   },
+}));
+
+const RightDirigibleWrapper = styled.div(({ theme }) => ({
+  marginTop: '30px',
+  position: 'relative' || theme?.position,
 
   '@media screen and (max-width:768px)': {
-    top: '420px',
+    alignSelf: 'flex-end',
   },
 }));
 
 const RightDirigible = styled.img(({ theme }) => ({
-  '@media screen and (max-width:1130px)': {
-    width: '270px',
-  },
+  position: 'relative' || theme?.position,
+  zIndex: 1,
 
-  '@media screen and (max-width:768px)': {
-    alignSelf: 'flex-end',
-    width: '239px' || theme?.width,
-    marginTop: '8px',
+  '@media screen and (max-width:1130px)': {
+    width: '242px',
   },
 }));
