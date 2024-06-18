@@ -3,11 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from '@formspree/react';
 import styled from 'styled-components';
 
-import {
-  iconAppStore,
-  iconCloud,
-  iconPlayMarket,
-} from '../../../assets/images';
+import { iconCloud, qrCodeNative } from '../../../assets/images';
 
 export const Subscription = () => {
   const [state, handleSubmit] = useForm(
@@ -26,15 +22,19 @@ export const Subscription = () => {
     <Wrapper id='faq'>
       <CloudBlock>
         <CloudImage src={iconCloud} />
-        <Title>Download game app</Title>
-        <DownloadIconsWrapper>
-          <a href='https://test.com'>
-            <img src={iconAppStore} alt='appStoreIcon' />
+        <Title>
+          Join our
+          <br /> Telegram game
+        </Title>
+        <QRCodeWrapper>
+          <a
+            href='https://t.me/HamsterpunkBot'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <img src={qrCodeNative} alt='qrCode' />
           </a>
-          <a href='https://test.com'>
-            <img src={iconPlayMarket} alt='playMarketIcon' />
-          </a>
-        </DownloadIconsWrapper>
+        </QRCodeWrapper>
       </CloudBlock>
       <Text>
         <TypographyDescription>
@@ -67,7 +67,7 @@ const Wrapper = styled.div(({ theme }) => ({
   marginTop: '40px',
 
   '@media screen and (max-width:1130px)': {
-    margin: 0,
+    marginTop: '80px',
   },
 }));
 
@@ -124,26 +124,29 @@ const Title = styled.div(({ theme }) => ({
   },
 }));
 
-const DownloadIconsWrapper = styled.div(({ theme }) => ({
+const QRCodeWrapper = styled.div(({ theme }) => ({
   display: 'flex' || theme?.display,
   alignItems: 'center',
-  gap: '40px',
   marginBottom: '130px',
   position: 'relative',
   zIndex: 1,
 
+  '& img': {
+    width: '120px',
+  },
+
   '@media screen and (max-width:1130px)': {
     marginBottom: '96px',
+
+    '& img': {
+      width: '70px',
+    },
   },
 
   '@media screen and (max-width:768px)': {
-    marginBottom: '-54px',
-    marginTop: '48px',
+    marginBottom: '60px',
+    marginTop: '50px',
     gap: '24px',
-
-    '& img': {
-      width: '118px',
-    },
   },
 }));
 
@@ -168,6 +171,10 @@ const TypographyDescription = styled.p(({ theme }) => ({
   letterSpacing: '0px',
   textAlign: 'center',
   color: 'rgba(72, 55, 47, 1)',
+
+  '@media screen and (max-width:600px)': {
+    textAlign: 'left',
+  },
 }));
 
 const Form = styled.form(({ theme }) => ({

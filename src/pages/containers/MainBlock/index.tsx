@@ -3,12 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
-  appStore,
   instagrammIcon,
   logo,
   mainBg,
-  playMarket,
+  mobileMainBg,
+  qrCode,
   tiktokIcon,
+  xIcon,
   youtubeIcon,
 } from '../../../assets/images';
 
@@ -16,7 +17,8 @@ export const MainBlock = () => {
   return (
     <Wrapper>
       <BGWrapper>
-        {/* <BackgroundImage src={mainBg} alt='Background Image' /> */}
+        <BackgroundImage src={mainBg} alt='Background' />
+        <BackgroundImageSmall src={mobileMainBg} alt='Background Small' />
       </BGWrapper>
       <SocialBlock>
         <a
@@ -41,15 +43,24 @@ export const MainBlock = () => {
         >
           <img src={tiktokIcon} alt='TikTok' />
         </a>
+
+        <a
+          href='https://x.com/hamsterpunkgamee'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img src={xIcon} alt='TikTok' />
+        </a>
       </SocialBlock>
       <CentralBlock>
         <Logo src={logo} alt='Logo' />
-        <Text>Relaxing farm game</Text>
-        <MobileAppWrapper>
-          <img src={appStore} alt='app store icon' />
-          <img src={playMarket} alt='play market icon' />
-        </MobileAppWrapper>
       </CentralBlock>
+
+      <QrCode>
+        <a href='https://t.me/HamsterpunkBot' target='_blank' rel='noreferrer'>
+          <img src={qrCode} alt='qrCode' />
+        </a>
+      </QrCode>
     </Wrapper>
   );
 };
@@ -77,107 +88,95 @@ const SocialBlock = styled.div(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   gap: '24px',
-
   '@media screen and (max-width:1130px)': {
-    position: 'relative',
-    left: 'auto',
-    top: 'auto',
-    marginTop: '64px',
+    flexDirection: 'column',
+    left: '20px',
   },
 
   '@media screen and (max-width:768px)': {
+    top: '20px',
     '& img': {
       width: '40px',
     },
   },
 }));
 
-const CentralBlock = styled.div(({ theme }) => ({
-  display: 'flex' || theme?.display,
-  flexDirection: 'column',
-  alignItems: 'center',
-  maxWidth: '400px',
-  marginTop: '81px',
-  position: 'relative',
+const CentralBlock = styled.div({
+  position: 'absolute',
+  right: '300px',
+  top: '90px',
 
   '@media screen and (max-width:1130px)': {
-    position: 'relative',
-    left: 'auto',
     top: 'auto',
-    marginTop: '20px',
+    maxWidth: '286px',
+  },
+
+  '@media screen and (max-width:840px)': {
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: '286px',
+    right: 'auto',
   },
 
   '@media screen and (max-width:768px)': {
-    maxWidth: '286px',
+    maxWidth: '154px',
+    maxHeight: '86px',
   },
-}));
+});
 
 const Logo = styled.img(({ theme }) => ({
   maxWidth: '100%' || theme?.maxWidth,
 }));
 
-const Text = styled.p(({ theme }) => ({
-  fontFamily: 'Octopus Bold Inline',
-  fontSize: '64px' || theme?.fontSize,
-  fontWeight: 400,
-  lineHeight: '52px',
-  color: '#A74C47',
-  margin: '12px 0 32px 0',
-  textAlign: 'center',
+const QrCode = styled.div(({ theme }) => ({
+  position: 'absolute' || theme?.position,
+  right: '80px',
+  top: '98px',
+  display: 'flex',
 
   '@media screen and (max-width:1130px)': {
-    margin: '0px 0 109px 0',
+    right: '20px',
   },
 
   '@media screen and (max-width:768px)': {
-    fontSize: '40px',
-    lineHeight: '32px',
-    maxWidth: '202px',
-  },
-}));
-
-const MobileAppWrapper = styled.div(({ theme }) => ({
-  display: 'flex' || theme?.display,
-  width: '100%',
-  alignItems: 'center',
-  gap: '40px',
-  justifyContent: 'center',
-
-  '@media screen and (max-width:768px)': {
-    gap: '24px',
-    '& > img': {
-      width: '118px',
+    '& img': {
+      maxWidth: '152px',
+      maxHeight: '136px',
     },
   },
+  alignItems: 'center',
+  gap: '24px',
 }));
 
 const BGWrapper = styled.div(({ theme }) => ({
   position: 'absolute' || theme?.position,
   left: 0,
   top: 0,
-  zIndex: 0,
   width: '100%',
-  height: '1404px',
-  background: `url(${mainBg})`,
-  backgroundPosition: 'center -504px',
-  backgroundRepeat: 'no-repeat',
-  // position: 'absolute' || theme?.position,
-  // display: 'flex',
-  // justifyContent: 'center',
-  // alignItems: 'center',
-  // inset: '-318px -318px -504px -254px',
-
-  '@media screen and (max-width:1130px)': {
-    backgroundPosition: 'center',
-    maxHeight: '100%',
-    height: '100%',
-  },
+  overflow: 'hidden',
 }));
 
-// const BackgroundImage = styled.img(() => ({
-//   // zIndex: 0,
-//   // width: '1948px',
-//   // height: '1722px',
-//   // top: '-318px',
-//   // left: '-254px',
-// }));
+const BackgroundImage = styled.img({
+  width: '100%',
+  height: 'auto',
+  maxHeight: '950px',
+  minHeight: '530px',
+  position: 'relative',
+
+  '@media screen and (max-width:550px)': {
+    display: 'none',
+  },
+});
+
+const BackgroundImageSmall = styled.img({
+  display: 'none',
+
+  '@media screen and (max-width:550px)': {
+    display: 'block',
+    width: '100%',
+    height: 'auto',
+    maxHeight: '950px',
+    minHeight: '530px',
+    position: 'relative',
+  },
+});

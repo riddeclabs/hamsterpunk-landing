@@ -3,9 +3,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { AdvantagesBlock } from './containers/AdvantagesBlock';
+import { BottomFooter } from './containers/BottomFooter';
 import { CustomizationBlock } from './containers/CustomizationBlock';
 import { FarmingBlock } from './containers/FarmingBlock';
 import { Footer } from './containers/Footer';
+import { GameRoadmap } from './containers/GamaRoadmap';
 import { MainBlock } from './containers/MainBlock';
 import { NewWayBlock } from './containers/NewWayBlock';
 import { VideoBlock } from './containers/VideoBlock';
@@ -46,7 +48,9 @@ export const HomePage = () => {
       <FarmingBlock />
       <VideoBlock />
       <CustomizationBlock />
+      <GameRoadmap />
       <Footer />
+      <BottomFooter />
     </Wrapper>
   );
 };
