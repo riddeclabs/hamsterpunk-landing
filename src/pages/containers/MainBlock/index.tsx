@@ -16,10 +16,7 @@ import {
 export const MainBlock = () => {
   return (
     <Wrapper>
-      <BGWrapper>
-        <BackgroundImage src={mainBg} alt='Background' />
-        <BackgroundImageSmall src={mobileMainBg} alt='Background Small' />
-      </BGWrapper>
+      <BGWrapper />
       <SocialBlock>
         <a
           href='https://www.youtube.com/channel/UCv2Je1vQ_C-f1Sgp4bna9FA'
@@ -150,33 +147,27 @@ const QrCode = styled.div(({ theme }) => ({
 
 const BGWrapper = styled.div(({ theme }) => ({
   position: 'absolute' || theme?.position,
-  left: 0,
-  top: 0,
+  top: '0',
+  left: '0',
   width: '100%',
-  overflow: 'hidden',
+  height: '100%',
+  backgroundImage: `url(${mainBg})`,
+  backgroundSize: '100% 100%',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  minHeight: '930px',
+  maxHeight: '930px',
+
+  '@media screen and (max-width:800px)': {
+    minHeight: '630px',
+    maxHeight: '630px',
+  },
+
+  '@media screen and (max-width:500px)': {
+    backgroundImage: `url(${mobileMainBg})`,
+    maxHeight: '540px',
+    minHeight: '540px',
+    backgroundPosition: 'center',
+    backgroundSize: '100% 100%',
+  },
 }));
-
-const BackgroundImage = styled.img({
-  width: '100%',
-  height: 'auto',
-  maxHeight: '950px',
-  minHeight: '530px',
-  position: 'relative',
-
-  '@media screen and (max-width:550px)': {
-    display: 'none',
-  },
-});
-
-const BackgroundImageSmall = styled.img({
-  display: 'none',
-
-  '@media screen and (max-width:550px)': {
-    display: 'block',
-    width: '100%',
-    height: 'auto',
-    maxHeight: '950px',
-    minHeight: '530px',
-    position: 'relative',
-  },
-});
