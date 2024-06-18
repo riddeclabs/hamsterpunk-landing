@@ -111,12 +111,20 @@ const Content = styled.div({
   display: 'flex',
   flexDirection: 'column',
   gap: '20px',
+
+  '@media screen and (max-width:375px)': {
+    padding: '10px',
+  },
 });
 
 const Bar = styled.div({
   width: '90vw',
   maxWidth: '1280px',
   border: '2px solid rgba(72, 55, 47, 0.24)',
+
+  '@media screen and (max-width:375px)': {
+    width: 'auto',
+  },
 });
 
 const BottomContent = styled.div({

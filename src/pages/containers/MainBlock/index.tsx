@@ -152,22 +152,33 @@ const BGWrapper = styled.div(({ theme }) => ({
   width: '100%',
   height: '100%',
   backgroundImage: `url(${mainBg})`,
-  backgroundSize: '100% 100%',
-  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center bottom',
   backgroundRepeat: 'no-repeat',
-  minHeight: '930px',
-  maxHeight: '930px',
 
-  '@media screen and (max-width:800px)': {
+  minHeight: '1000px',
+  maxHeight: '1000px',
+
+  '@media screen and (max-width:1600px)': {
+    minHeight: '900px',
+    maxHeight: '900px',
+  },
+
+  '@media screen and (max-width:1325px)': {
+    backgroundPosition: 'center right',
+    minHeight: '830px',
+    maxHeight: '830px',
+  },
+
+  '@media screen and (max-width:715px)': {
     minHeight: '630px',
     maxHeight: '630px',
   },
 
   '@media screen and (max-width:500px)': {
     backgroundImage: `url(${mobileMainBg})`,
-    maxHeight: '540px',
-    minHeight: '540px',
     backgroundPosition: 'center',
-    backgroundSize: '100% 100%',
+    minHeight: '500px',
+    maxHeight: '500px',
   },
 }));
