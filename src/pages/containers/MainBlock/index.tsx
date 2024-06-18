@@ -19,7 +19,6 @@ export const MainBlock = () => {
       <BGWrapper>
         <BackgroundImage src={mainBg} alt='Background' />
         <BackgroundImageSmall src={mobileMainBg} alt='Background Small' />
-        <Overlay />
       </BGWrapper>
       <SocialBlock>
         <a
@@ -46,7 +45,7 @@ export const MainBlock = () => {
         </a>
 
         <a
-          href='https://www.tiktok.com/@hamsterpunkgame'
+          href='https://x.com/hamsterpunkgamee'
           target='_blank'
           rel='noreferrer'
         >
@@ -180,13 +179,4 @@ const BackgroundImageSmall = styled.img({
     minHeight: '530px',
     position: 'relative',
   },
-});
-
-const Overlay = styled.div({
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
-  backgroundColor: 'rgba(0, 0, 0, 0.3)',
 });

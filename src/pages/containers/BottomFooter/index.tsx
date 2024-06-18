@@ -85,7 +85,7 @@ export const BottomFooter = () => {
             </a>
 
             <a
-              href='https://www.tiktok.com/@hamsterpunkgame'
+              href='https://x.com/hamsterpunkgame'
               target='_blank'
               rel='noreferrer'
             >
@@ -132,6 +132,7 @@ const Logo = styled.img({
 
 const TermsContainer = styled.div({
   display: 'flex',
+  visibility: 'hidden',
   gap: '40px',
   '@media screen and (max-width:995px)': {
     display: 'none',
@@ -140,6 +141,7 @@ const TermsContainer = styled.div({
 
 const MobileTermsContainer = styled.div({
   display: 'none',
+  visibility: 'hidden',
   gap: '40px',
   '@media screen and (max-width:995px)': {
     display: 'flex',
