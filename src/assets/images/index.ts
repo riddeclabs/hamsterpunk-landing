@@ -32,29 +32,56 @@ import idleCloud2 from './idle_cloud_2.svg';
 import idleDirigibleBig from './idle_dirigible_big.png';
 import idleDirigibleSmall from './idle_dirigible_small.png';
 import instagrammIcon from './insta.svg';
+import instaWhite from './instaWhite.svg';
 import intersect from './intersect.svg';
 import intersectBottom from './intersectBottom.svg';
 import logo from './logo.png';
 import mainImage from './main.jpg';
 import mainBg from './mainBg.png';
+import mobileMainBg from './mobileMainBg.png';
 import newWayImage from './newWayImage.png';
 import orangeBg from './organgeBg.png';
 import playMarket from './playMarket.svg';
 import progressImage from './progressImage.png';
+import qrCode from './qrCode.svg';
+import qrCodeNative from './qrCodeNative.svg';
 import riddec from './riddec.svg';
 import riddecMobile from './riddecMobile.svg';
+import roadMapCenterCloud from './roadMapCloudCenter.svg';
+import roadMapLeftCloud from './roadMapCloudLeft.svg';
+import roadMapRightCloud from './roadMapRightCloud.svg';
+import roadMapSecondCenterCloud from './roadMapSecondCenterCloud.svg';
+import roadMapSecondLeftCloud from './roadMapSecondLeftCloud.svg';
+import roadMapSecondRightCloud from './roadMapSecondRightCloud.svg';
+import roadMapThirdRightCloud from './roadMapThirdRightCloud.svg';
 import tiktokIcon from './tiktok.svg';
+import tiktokWhite from './tiktokWhite.svg';
 import trailer1 from './trailer1.png';
 import trailerCloudLeft from './trailer_cloud_left.svg';
 import trailerCloudRight from './trailer_cloud_right.svg';
 import trailerLand from './trailer_land.png';
+import xIcon from './xIcon.svg';
+import xIconWhite from './xIconWhite.svg';
 import youtubeIcon from './youtube.svg';
+import youtubeIconWhite from './youtubeWhite.svg';
 
 export {
   mainImage,
   burgerIcon,
+  xIconWhite,
+  mobileMainBg,
   intersect,
+  roadMapThirdRightCloud,
+  roadMapSecondRightCloud,
+  roadMapSecondLeftCloud,
+  roadMapSecondCenterCloud,
+  roadMapLeftCloud,
+  roadMapRightCloud,
+  roadMapCenterCloud,
+  youtubeIconWhite,
+  tiktokWhite,
   androidIcon,
+  instaWhite,
   iosIcon,
   riddec,
   newWayImage,
@@ -70,6 +97,7 @@ export {
   hamster5,
   riddecMobile,
   arrow,
+  qrCode,
   intersectBottom,
   idleDirigibleBig,
   idleDirigibleSmall,
@@ -94,6 +122,8 @@ export {
   customizationDirigibleLeft,
   iconAppStore,
   iconPlayMarket,
+  xIcon,
+  qrCodeNative,
   iconCloud,
   //newImages
   logo,

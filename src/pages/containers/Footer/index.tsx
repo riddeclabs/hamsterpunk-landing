@@ -30,6 +30,9 @@ const Content = styled.div(({ theme }) => ({
   alignItems: 'flex-start',
   gap: '100px',
   maxWidth: '1280px',
+  '@media screen and (max-width:768px)': {
+    marginTop: '50px',
+  },
 }));
 
 const Intersect = styled.div(({ theme }) => ({
