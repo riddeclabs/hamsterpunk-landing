@@ -97,7 +97,10 @@ const LeftCloudMobile = styled.img(({ theme }) => ({
 const LeftCloud = styled.img(({ theme }) => ({
   position: 'absolute' || theme?.position,
   left: '-400px',
-  top: '-200px',
+  top: '-175px',
+  '@media screen and (max-width:1600px)': {
+    top: '-200px',
+  },
 }));
 
 const TextWrapper = styled.div(({ theme }) => ({

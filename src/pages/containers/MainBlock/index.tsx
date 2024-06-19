@@ -152,16 +152,22 @@ const BGWrapper = styled.div(({ theme }) => ({
   width: '100%',
   height: '100%',
   backgroundImage: `url(${mainBg})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center bottom',
+  backgroundSize: '100% 100%',
+  backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-
-  minHeight: '1000px',
-  maxHeight: '1000px',
 
   '@media screen and (max-width:1600px)': {
     minHeight: '900px',
     maxHeight: '900px',
+    position: 'absolute' || theme?.position,
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
+    backgroundImage: `url(${mainBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center bottom',
+    backgroundRepeat: 'no-repeat',
   },
 
   '@media screen and (max-width:1325px)': {
