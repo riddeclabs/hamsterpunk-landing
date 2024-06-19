@@ -16,7 +16,6 @@ import {
 export const MainBlock = () => {
   return (
     <Wrapper>
-      <BGWrapper />
       <SocialBlock>
         <a
           href='https://www.youtube.com/channel/UCv2Je1vQ_C-f1Sgp4bna9FA'
@@ -68,6 +67,10 @@ const Wrapper = styled.div(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'flex-start',
+  backgroundImage: `url(${mainBg})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
 
   '@media screen and (max-width:1130px)': {
     flexDirection: 'column',
@@ -75,6 +78,17 @@ const Wrapper = styled.div(({ theme }) => ({
     justifyContent: 'flex-start',
     position: 'relative',
     zIndex: 1,
+    height: '80dvh',
+  },
+
+  '@media screen and (max-width:1440px)': {
+    backgroundPosition: 'center right',
+  },
+
+  '@media screen and (max-width:800px)': {
+    backgroundImage: `url(${mobileMainBg})`,
+    backgroundPosition: 'center',
+    height: '60dvh',
   },
 }));
 
@@ -143,48 +157,4 @@ const QrCode = styled.div(({ theme }) => ({
   },
   alignItems: 'center',
   gap: '24px',
-}));
-
-const BGWrapper = styled.div(({ theme }) => ({
-  position: 'absolute' || theme?.position,
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%',
-  backgroundImage: `url(${mainBg})`,
-  backgroundSize: '100% 100%',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-
-  '@media screen and (max-width:1600px)': {
-    minHeight: '900px',
-    maxHeight: '900px',
-    position: 'absolute' || theme?.position,
-    top: '0',
-    left: '0',
-    width: '100%',
-    height: '100%',
-    backgroundImage: `url(${mainBg})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center bottom',
-    backgroundRepeat: 'no-repeat',
-  },
-
-  '@media screen and (max-width:1325px)': {
-    backgroundPosition: 'center right',
-    minHeight: '830px',
-    maxHeight: '830px',
-  },
-
-  '@media screen and (max-width:715px)': {
-    minHeight: '630px',
-    maxHeight: '630px',
-  },
-
-  '@media screen and (max-width:500px)': {
-    backgroundImage: `url(${mobileMainBg})`,
-    backgroundPosition: 'center',
-    minHeight: '500px',
-    maxHeight: '500px',
-  },
 }));
