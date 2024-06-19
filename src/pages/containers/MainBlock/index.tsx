@@ -69,7 +69,7 @@ const Wrapper = styled.div(({ theme }) => ({
   alignItems: 'flex-start',
   backgroundImage: `url(${mainBg})`,
   backgroundSize: 'cover',
-  backgroundPosition: 'center',
+  backgroundPosition: '100% 100%',
   backgroundRepeat: 'no-repeat',
 
   '@media screen and (max-width:1130px)': {
@@ -79,10 +79,6 @@ const Wrapper = styled.div(({ theme }) => ({
     position: 'relative',
     zIndex: 1,
     height: '80dvh',
-  },
-
-  '@media screen and (max-width:1440px)': {
-    backgroundPosition: 'center right',
   },
 
   '@media screen and (max-width:800px)': {
