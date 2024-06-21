@@ -60,7 +60,6 @@ export const MainBlock = () => {
     </Wrapper>
   );
 };
-
 const Wrapper = styled.div(({ theme }) => ({
   width: '100%' || theme?.width,
   height: '100dvh',
@@ -146,6 +145,7 @@ const QrCode = styled.div(({ theme }) => ({
   },
 
   '@media screen and (max-width:768px)': {
+    top: '62px',
     '& img': {
       maxWidth: '152px',
       maxHeight: '136px',

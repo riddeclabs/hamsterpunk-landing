@@ -126,6 +126,10 @@ const Title = styled.div(({ theme }) => ({
     fontSize: '40px',
     lineHeight: '32px',
   },
+
+  '@media screen and (max-width:450px)': {
+    width: '183px',
+  },
 }));
 
 const DescriptionWrapper = styled.div(() => ({

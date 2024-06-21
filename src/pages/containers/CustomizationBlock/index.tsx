@@ -21,7 +21,7 @@ export const CustomizationBlock = () => {
           <LeftCloud src={customizationCloudLeft} alt='Idle Cloud 1' />
         </LeftDirigibleWrapper>
         <TextWrapper>
-          <Title>Settlement customisation</Title>
+          <Title>Settlement customize</Title>
           <Description>
             Expand your settlement using a Grappling Hook to catch new islands
             and build bridges to them. Decorate the streets of your town with
