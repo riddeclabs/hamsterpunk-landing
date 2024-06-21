@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 
@@ -10,55 +10,71 @@ import {
   trailerCloudLeft,
 } from '../../../assets/images';
 
-const roadMaps = [
-  {
-    data: 'June 2024',
-    title: 'Launch of the Base Game',
-    info: 'Experience the beginning of your adventure with the launch of our base game! Get ready to explore and start your journey.',
-  },
-  {
-    data: 'July 2024',
-    title: 'Upgrades System',
-    info: 'Enhance your gameplay with the introduction of our Upgrades System. Customize and improve your experience.',
-  },
-  {
-    data: 'Aug. 2024',
-    title: 'More Islands',
-    info: 'Expand your horizons with new islands to discover and explore. Each island brings new challenges and rewards.',
-  },
-  {
-    data: 'Sept. 2024',
-    title: 'Decorative Items',
-    info: 'Personalize your world with a variety of decorative items. Make your space uniquely yours.',
-  },
-  {
-    data: 'Q4 2024',
-    title: 'More Boosts',
-    info: 'Boost your progress with additional power-ups and bonuses. Take your game to the next level.',
-  },
-  {
-    data: 'Q1 2025',
-    title: 'More Hamster Professions',
-    info: 'Unlock new hamster professions, adding depth and variety to your gameplay. Each profession offers unique abilities and perks.',
-  },
-  {
-    data: 'Q2 2025',
-    title: 'Premium Currency and Related Content',
-    info: 'Introduce premium currency along with exclusive decorations, upgrades, islands, and professions. Elevate your gaming experience with premium features.',
-  },
-  {
-    data: 'Q3 2025',
-    title: 'NFT-Based Decorations and Market',
-    info: 'Dive into the world of NFTs with unique, collectible decorations. Trade and market your NFTs with other players.',
-  },
-  {
-    data: 'Q4 2025',
-    title: 'Crypto Airdrops to Premium Currency Owners',
-    info: 'Receive exclusive crypto airdrops as a reward for owning premium currency. Enjoy the benefits and rewards of being a premium player.',
-  },
-];
-
 export const GameRoadmap = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const roadMaps = [
+    {
+      data: 'June 2024',
+      title: 'Launch of the Base Game',
+      info: 'Experience the beginning of your adventure with the launch of our base game! Get ready to explore and start your journey.',
+    },
+    {
+      data: 'July 2024',
+      title: 'Upgrades System',
+      info: 'Enhance your gameplay with the introduction of our Upgrades System. Customize and improve your experience.',
+    },
+    {
+      data: 'Aug. 2024',
+      fullData: 'August 2024',
+      title: 'More Islands',
+      info: 'Expand your horizons with new islands to discover and explore. Each island brings new challenges and rewards.',
+    },
+    {
+      data: 'Sept. 2024',
+      fullData: 'September 2024',
+      title: 'Decorative Items',
+      info: 'Personalize your world with a variety of decorative items. Make your space uniquely yours.',
+    },
+    {
+      data: 'Q4 2024',
+      title: 'More Boosts',
+      info: 'Boost your progress with additional power-ups and bonuses. Take your game to the next level.',
+    },
+    {
+      data: 'Q1 2025',
+      title: 'More Hamster Professions',
+      info: 'Unlock new hamster professions, adding depth and variety to your gameplay. Each profession offers unique abilities and perks.',
+    },
+    {
+      data: 'Q2 2025',
+      title: 'Premium Currency and Related Content',
+      info: 'Introduce premium currency along with exclusive decorations, upgrades, islands, and professions. Elevate your gaming experience with premium features.',
+    },
+    {
+      data: 'Q3 2025',
+      title: 'NFT-Based Decorations and Market',
+      info: 'Dive into the world of NFTs with unique, collectible decorations. Trade and market your NFTs with other players.',
+    },
+    {
+      data: 'Q4 2025',
+      title: 'Crypto Airdrops to Premium Currency Owners',
+      info: 'Receive exclusive crypto airdrops as a reward for owning premium currency. Enjoy the benefits and rewards of being a premium player.',
+    },
+  ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Wrapper>
       <Content>
@@ -74,11 +90,13 @@ export const GameRoadmap = () => {
         </Title>
         <CardContainer>
           {roadMaps.map((item, idx) => {
+            const displayData =
+              windowWidth <= 1190 && item.fullData ? item.fullData : item.data;
             return (
               <Card key={idx}>
                 <CardContent>
                   <LeftTextContainer>
-                    <LeftText>{item.data}</LeftText>
+                    <LeftText>{displayData}</LeftText>
                     <CenterText>{item.title}</CenterText>
                   </LeftTextContainer>
                   <RightText>{item.info}</RightText>
@@ -242,6 +260,7 @@ const CenterText = styled.div(() => ({
   '@media screen and (max-width:775px)': {
     fontSize: '40px',
     lineHeight: '32px',
+    maxWidth: '260px',
   },
 }));
 

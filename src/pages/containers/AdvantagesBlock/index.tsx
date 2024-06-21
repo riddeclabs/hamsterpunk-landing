@@ -48,8 +48,8 @@ export const AdvantagesBlock = () => {
             Your Way
           </Title>
           <Description>
-            Lead and govern your hamster town the way you like, shape it history
-            with your decisions and give it the look and feel you like!
+            Lead and govern your hamster town the way you like, shape its
+            history with your decisions and give it the look and feel you like!
           </Description>
           <Image src={advantage3} alt='advantage' />
         </AdvantageItem>

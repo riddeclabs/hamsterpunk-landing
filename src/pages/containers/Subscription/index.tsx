@@ -49,7 +49,7 @@ export const Subscription = () => {
           name='email'
           value={email}
           onChange={(e) => setEmail(e?.target.value)}
-          placeholder='Email Address'
+          placeholder='Email'
         />
 
         <SubmitButton type='submit' disabled={state.submitting || !email}>
