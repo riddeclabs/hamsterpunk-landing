@@ -68,8 +68,12 @@ const Wrapper = styled.div(({ theme }) => ({
   alignItems: 'flex-start',
   backgroundImage: `url(${mainBg})`,
   backgroundSize: 'cover',
-  backgroundPosition: '100% 100%',
+  backgroundPosition: 'center top -170px',
   backgroundRepeat: 'no-repeat',
+
+  '@media screen and (max-width:2000px)': {
+    backgroundPosition: '100% 100%',
+  },
 
   '@media screen and (max-width:1130px)': {
     flexDirection: 'column',
