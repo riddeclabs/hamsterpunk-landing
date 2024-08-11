@@ -1,0 +1,15 @@
+on:
+  push:
+    branches: [main]
+
+jobs:
+  dev:
+    uses: riddeclabs/github-actions/.github/workflows/cloudfront.yaml@v1
+    secrets: inherit
+    with:
+      account_number: 702683519923
+      s3_bucket: riddec-hamsterpunk-landing-prod
+      slack_channel: gambling-deployments
+      service_url: https://www.hamsterpunk.net
+      build_command: npm install && npm run build
+      output_folder: build
